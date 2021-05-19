@@ -59,7 +59,6 @@ namespace CSC205Week02
 
 /*
  * Week02 lecture slides - 3.5 Adding New Methods
- * Example #1:
  */
 
 using System;
@@ -86,8 +85,7 @@ namespace CSC205Week02
 
 
 /*
- * Week02 lecture slides - 3.5 Adding New Methods
- * Example #2:
+ * Week02 lecture slides - 3.6 Classes and methods
  */
 
 using System;
@@ -113,3 +111,5 @@ namespace CSC205Week02
         }
     }
 }
+
+
