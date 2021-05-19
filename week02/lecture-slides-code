@@ -57,3 +57,31 @@ namespace CSC205Week02
 
 
 
+/*
+ * Week02 lecture slides - 3.5 Adding New Methods
+ * Example #1:
+ */
+
+using System;
+namespace CSC205Week02
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("First line.");
+            NewLine();
+            NewLine();
+            NewLine();
+            Console.WriteLine("Second line.");
+        }
+
+        public static void NewLine()
+        {
+            Console.WriteLine("");
+        }
+    }
+}
+
+
+
