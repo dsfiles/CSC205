@@ -113,3 +113,57 @@ namespace CSC205Week02
 }
 
 
+
+/*
+ * Week02 lecture slides - 3.8 Method Parameters and Arguments
+ */
+
+using System;
+namespace CSC205Week02
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string argument = "Never say never.";
+            WriteTwice(argument);
+        }
+
+        public static void WriteTwice(string str)
+        {
+            Console.WriteLine(str);
+            Console.WriteLine(str);
+        }
+    }
+}
+
+
+
+/*
+ * Week02 lecture slides - 3.10 Methods with Multiple Parameters
+ */
+
+using System;
+namespace CSC205Week02
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int hour = 11;
+            int minute = 59;
+            //WriteTime(int hour, int minute); // WRONG!
+            WriteTime(hour, minute);
+        }
+
+        public static void WriteTime(int hour, int minute)
+        {
+            Console.Write(hour);
+            Console.Write(":");
+            Console.WriteLine(minute);
+        }
+    }
+}
+
+
+
