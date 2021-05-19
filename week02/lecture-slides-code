@@ -1,0 +1,28 @@
+/*
+ * Week02 lecture slides - Sec. 3.1 & 3.2
+ * Floating-point and integral numbers
+ */
+
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int x = 1.1;
+            int x = (int)1.1;
+            double y = 1;
+            double z = 1 / 3;
+            double m = 1.0 / 3.0;
+            double n = 1 / 3.0;
+            double pi = 3.14159;
+            double p = (int)pi * 20.0;
+            double q = (int)(pi * 20);
+            Console.WriteLine($"x={x}; y={y}; z={z}; m={m}; n={n}; p={p}; q={q}");
+        }
+    }
+}
+
+
+
