@@ -4,7 +4,7 @@
  */
 
 using System;
-namespace ConsoleApp1
+namespace CSC205Week02
 {
     class Program
     {
@@ -20,6 +20,37 @@ namespace ConsoleApp1
             double p = (int)pi * 20.0;
             double q = (int)(pi * 20);
             Console.WriteLine($"x={x}; y={y}; z={z}; m={m}; n={n}; p={p}; q={q}");
+        }
+    }
+}
+
+
+
+/*
+ * Week02 lecture slides - 3.3 Math Methods
+ */
+
+using System;
+namespace CSC205Week02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             * C# assumes that the values you use with Sine and the other trigonometric functions (cos, tan) are in radians.
+             * To convert from degrees to radians, use the formula below:
+             * double rad = degrees * 2 * Math.PI / 360.0;
+            */
+            double root = Math.Sqrt(17.0);
+            double angle = 0.523599; //angle in radian, 0.523599 is about 30 degrees
+            double s = Math.Sin(angle);
+
+            int x = (int)Math.Round(Math.PI * 20.0);
+            double y = Math.Cos(angle + Math.PI / 2);
+            double z = Math.Exp(Math.Log(10.0));
+
+            Console.WriteLine($"root={root}; angle={angle}; s={s}; \nx={x}; y={y}; z={z}");
         }
     }
 }
