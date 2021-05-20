@@ -1,0 +1,87 @@
+1. A single byte is made of 8 bits. So how many values can be represented by a single Byte?
+Answer: 256 (hint: 2^8=256)
+
+
+2. Which type of error results in the C# compiler not compiling the code? (Select one: Logical, Syntax, Runtime)
+Answer: Syntax error
+
+
+3. Show the full path of the executable file of your "Hello world" program on your own computer.
+Answer: on my own computer, the full path is: "C:\Users\GL\source\repos\CSC205Week02\CSC205Week02\"
+
+
+4. Debugging
+// Original code with bugs
+Using Systems
+namespace CSC205Quiz01 {
+    Class program {
+        void static main(string[] args);
+        (
+            Console.Writeline("I just removed all the bugs!")
+        )
+    }
+}
+
+//bugs removed!
+using System;
+namespace CSC205Quiz01
+{
+    class Program // first letter of class name is usually uppper case
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("I just removed all the bugs!");
+        }
+    }
+}
+
+
+5. Select all the valid C# identifiers:
+    String, my-age, 3rdNum, dynamic, __num, M&M, @void, var
+
+
+
+// 1. Debugging
+// Original
+Using Systems
+namespace CSC205Quiz01 {
+    Class program {
+        void static main(string[] args);
+        (
+            Console.Writeline("I just removed all the bugs!")
+        )
+    }
+}
+
+//bugs removed!
+using System;
+namespace CSC205Quiz01
+{
+    class Program // first letter of class name is usually uppper case
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("I just removed all the bugs!");
+        }
+    }
+}
+
+
+//2. Select all the valid C# identifiers:
+String, my-age, 3rdNum, dynamic, __num, M&M, @void, var
+
+Invalid:
+my-age: dash is not allowed
+3rdNum: starts with a number
+M&M: special character & is not allowed
+
+Valid:
+String: avoid it because the firsts letter of variable is usually lower case by C# naming convention
+__num: two leading underscores are okay but try to avoid this type of identifiers
+@void: 
+  You can declare identifiers that match C# keywords by using the @ prefix on the identifier. 
+  The @ is not part of the identifier name. For example, @if declares an identifier named if. 
+  These verbatim identifiers are primarily for interoperability with identifiers declared in other languages.
+  https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/identifier-names
+var & dynamic are Contextual Keywords. you can use them to name variables like: int var = 5; but try to avoid them. 
+for more, visit https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
