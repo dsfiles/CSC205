@@ -44,12 +44,13 @@ Answers:
     3rdNum: starts with a number
     M&M: special character & is not allowed
   Valid:
-    String: avoid it because the firsts letter of variable is usually lower case by C# naming convention
-    __num: two leading underscores are okay but try to avoid this type of identifiers
+    String: avoid it because it is similar to string
+    __num: two leading underscores are okay but try to avoid this type of identifiers. The ANSI C standard allows 
+      identifier names that begin with these character combinations to be reserved for compiler use.
     @void: 
       You can declare identifiers that match C# keywords by using the @ prefix on the identifier. 
       The @ is not part of the identifier name. For example, @if declares an identifier named if. 
       These verbatim identifiers are primarily for interoperability with identifiers declared in other languages.
       https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/identifier-names
-      var & dynamic are Contextual Keywords. you can use them to name variables like: int var = 5; but try to avoid them. 
-    for more, visit https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
+    var & dynamic are Contextual Keywords. you can use them to name variables like: int var = 5; but try to avoid them. 
+      for more, visit https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
