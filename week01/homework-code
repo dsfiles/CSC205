@@ -42,8 +42,8 @@ namespace CSC205Homework
             double r = 1.0;
             double theta = 0.523599;
             Console.WriteLine($"x1={(-b + Math.Sqrt(b * b - 4 * a * c)) / (2 * a)}");
-            Console.WriteLine($"volume={4 / 3 * Math.PI * r * r * r}");
-            Console.WriteLine($"volume={4 / 3 * Math.PI * Math.Pow(r, 3)}"); //same as above
+            Console.WriteLine($"volume={4.0 / 3.0 * Math.PI * r * r * r}");
+            Console.WriteLine($"volume={4.0 / 3.0 * Math.PI * Math.Pow(r, 3)}"); //same as above
             Console.WriteLine($"c={Math.Sin(theta) * Math.Sin(theta) + Math.Cos(theta) * Math.Cos(theta)}");
             Console.WriteLine($"c={Math.Pow(Math.Sin(theta), 2) + Math.Pow(Math.Cos(theta), 2)}"); // same as above
         }
