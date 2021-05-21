@@ -1,0 +1,67 @@
+/*
+ * CSC205 Week01 Programming Assignment
+ * #1 Create a program that will display to the console the name of each member of your team, all in one line.
+ * Team members: Name1, Name2 and Name3
+ */
+
+/*
+   #2 Convert these three mathematical formula to C# expressions. Use the following 
+   four lines of code below to compute and display the result:
+    double x1, volume;
+    double a = 1.0, b = 2.83, c = 1.2;
+    double r = 1.0;
+    double theta = 0.523599;
+    https://drive.google.com/file/d/1fIYk3A3ezzekys7-u55LKWS8tD5c1z78/view?usp=sharing
+*/
+
+using System;
+
+namespace CSC205Homework
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double x1, volume;
+            double a = 1.0, b = 2.83, c = 1.2;
+            double r = 1.0;
+            double theta = 0.523599;
+            Console.WriteLine($"x1={(-b + Math.Sqrt(b * b - 4 * a * c)) / (2 * a)}");
+            Console.WriteLine($"volume={4 / 3 * Math.PI * r * r * r}");
+            Console.WriteLine($"volume={4 / 3 * Math.PI * Math.Pow(r, 3)}"); //same as above
+            Console.WriteLine($"c={Math.Sin(theta) * Math.Sin(theta) + Math.Cos(theta) * Math.Cos(theta)}");
+            Console.WriteLine($"c={Math.Pow(Math.Sin(theta), 2) + Math.Pow(Math.Cos(theta), 2)}"); // same as above
+        }
+    }
+}
+
+
+#2 Convert these three mathematical formula to C# expressions. Use the following four lines of code below to compute and display the result:
+    double x1, volume;
+    double a = 1.0, b=2.83, c=1.2; 
+    double r=1.0;
+    double theta=0.523599;
+    
+   
+
+/*
+  CSC205 Week01 Programming Assignment
+  #3: Create a program that will display to the console the following pattern:
+    ^
+   ^^^
+  ^^^^^
+  Team members: Name1, Name2 and Name3
+ */
+
+using System;
+
+namespace CSC205Homework
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("  ^\n ^^^\n^^^^^");
+        }
+    }
+}
