@@ -3,6 +3,21 @@
  * #1 Create a program that will display to the console the name of each member of your team, all in one line.
  * Team members: Name1, Name2 and Name3
  */
+ 
+using System;
+
+namespace CSC180Homework
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Our team members: Name1, Name2 and Name3 ");
+        }
+    }
+}
+
+
 
 /*
    #2 Convert these three mathematical formula to C# expressions. Use the following 
@@ -34,15 +49,8 @@ namespace CSC205Homework
         }
     }
 }
-
-
-#2 Convert these three mathematical formula to C# expressions. Use the following four lines of code below to compute and display the result:
-    double x1, volume;
-    double a = 1.0, b=2.83, c=1.2; 
-    double r=1.0;
-    double theta=0.523599;
-    
    
+
 
 /*
   CSC205 Week01 Programming Assignment
@@ -52,6 +60,22 @@ namespace CSC205Homework
   ^^^^^
   Team members: Name1, Name2 and Name3
  */
+
+using System;
+
+namespace CSC205Homework
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("  ^");
+            Console.WriteLine(" ^^^");
+            Console.WriteLine("^^^^^");
+        }
+    }
+}
+
 
 using System;
 
