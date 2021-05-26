@@ -76,3 +76,43 @@ namespace CSC180Week03
         }
     }
 }
+
+
+
+/*
+ * Week03 lecture slides - 5.4 Overloading
+ * More exercises
+ */
+
+using System;
+namespace CSC180Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("sum of these two numbers: " + Sum(1, 2) + "\n");
+            Console.WriteLine("sum of these two numbers: " + Sum(1, 2.0) + "\n");
+            Console.WriteLine("sum of these two numbers: " + Sum(1.0, 2) + "\n");
+            Console.WriteLine("sum of these two numbers: " + Sum(1.0, 2.0) + "\n");
+        }
+
+        public static int Sum(int a, int b)
+        {
+            Console.WriteLine($"{a} is int, {b} is int");
+            return a + b;
+        }
+
+        public static double Sum(double a, int b)
+        {
+            Console.WriteLine($"{a} is double, {b} is int");
+            return a + b;
+        }
+
+        public static double Sum(double a, double b)
+        {
+            Console.WriteLine($"{a} is double, {b} is double");
+            return a + b;
+        }
+    }
+}
