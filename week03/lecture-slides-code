@@ -1,4 +1,75 @@
 /*
+ * CSC205 Week03 exercises
+ */
+
+using System;
+namespace CSC205Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SignOfNumExample01(-1);
+            SignOfNumExample02(2);
+            SignOfNumExample02(0);
+        }
+
+        public static void SignOfNumExample01(double x)
+        {
+            if (x > 0)
+            {
+                Console.WriteLine("x is positive");
+            }
+            else if (x < 0)
+            {
+                Console.WriteLine("x is negative");
+            }
+            else
+            {
+                Console.WriteLine("x is zero");
+            }
+        }
+
+        public static void SignOfNumExample02(double x)
+        {
+            if (x == 0)
+            {
+                Console.WriteLine("x is zero");
+            }
+            else
+            {
+                if (x > 0)
+                {
+                    Console.WriteLine("x is positive");
+                }
+                else
+                {
+                    Console.WriteLine("x is negative");
+                }
+            }
+        }
+
+        public static void SignOfNumExample03(double x)
+        {
+            if (x == 0)
+            {
+                Console.WriteLine("x is zero");
+            }
+            if (x > 0)
+            {
+                Console.WriteLine("x is positive");
+            }
+            if (x < 0)
+            {
+                Console.WriteLine("x is negative");
+            }
+        }
+    }
+}
+
+
+
+/*
  * Week03 lecture slides - 5.2 Program Development
  * A step-by-step incremental development way to compute the distance between two points, 
  * given by the coordinates (x1; y1) and (x2; y2)
