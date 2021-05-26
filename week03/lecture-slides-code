@@ -6,7 +6,7 @@
  */
 
 using System;
-namespace CSC180Week03
+namespace CSC205Week03
 {
     class Program
     {
@@ -44,7 +44,7 @@ namespace CSC180Week03
  */
 
 using System;
-namespace CSC180Week03
+namespace CSC205Week03
 {
     class Program
     {
@@ -85,7 +85,7 @@ namespace CSC180Week03
  */
 
 using System;
-namespace CSC180Week03
+namespace CSC205Week03
 {
     class Program
     {
@@ -125,7 +125,7 @@ namespace CSC180Week03
  */
 
 using System;
-namespace CSC180Week03
+namespace CSC205Week03
 {
     class Program
     {
