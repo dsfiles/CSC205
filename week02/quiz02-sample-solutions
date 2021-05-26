@@ -1,0 +1,15 @@
+1. What does the following code snippet accomplish? What role does variable z play? Briefly explain the algorithm.
+	int x=3, y=5, z;
+	z = x; x = y; y = z;
+Answer: The above code snippet effectively swaps the values of x and y using a third variable z
+
+
+
+2. What does the following code snippet do (or what happen to x and y after the two assignment statements? Briefly explain the algorithm.
+	double x = 3.2, y = 5.8;
+	x = x + y;
+	y = x - y;
+	x = x - y;
+Answer: The above code snippet effectively swaps the values of x and y WITHOUT using a third variable
+
+
