@@ -13,3 +13,96 @@ Answer: The above code snippet effectively swaps the values of x and y using a t
 Answer: The above code snippet effectively swaps the values of x and y WITHOUT using a third variable
 
 
+
+/*
+ * CSC205 Quiz02 
+ * 3. Write a method that finds the median three double numbers.
+ * Example #1:
+ */
+
+using System;
+namespace CSC205Quiz02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Median(1, 2, 3));
+            Console.WriteLine(Median(2, 1, 3));
+            Console.WriteLine(Median(3, 2, 1)); 
+            Console.WriteLine(Median(1, 3, 2));
+            Console.WriteLine(Median(1, 2, 2));
+        }
+
+        static double Median(double a, double b, double c)
+        {
+            double median;
+            if (a > b)
+            {
+                if (a < c)
+                {
+                    median = a;
+                }
+                else if (b > c)
+                {
+                    median = b;
+                }
+                else
+                {
+                    median = c;
+                }
+            }
+            else
+            {
+                if (a > c)
+                {
+                    median = a;
+                }
+                else if (b < c)
+                {
+                    median = b;
+                }
+                else
+                {
+                    median = c;
+                }
+            }
+            return median;
+        }
+    }
+}
+
+
+/*
+ * CSC205 Quiz02 
+ * 3. Use if-else statement to write a method that finds the median three double numbers. 
+ * Note that the return type of your method is double.
+ * Example #2: relational and logical operators
+ */
+
+using System;
+namespace CSC205Quiz02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(MedianOfThree(-11, 3, 2));
+        }
+
+        public static int MedianOfThree(int a, int b, int c)
+        {
+            if ((a > b && b > c) || (c > b && b > a))
+                return b;
+            else if ((b > a && a > c) || (c > a && a > b))
+                return a;
+            else
+            {  // handle scenarios when any two or all three numbers are equal
+                if ((a == b) || (a == c))
+                    return a;
+                else
+                    return c;
+            }
+        }
+    }
+}
