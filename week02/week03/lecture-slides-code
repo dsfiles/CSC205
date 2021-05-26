@@ -6,7 +6,7 @@
  */
 
 using System;
-namespace CSC180Week2
+namespace CSC180Week03
 {
     class Program
     {
@@ -34,3 +34,45 @@ namespace CSC180Week2
 
 
 
+/*
+ * Week03 lecture slides - 5.4 Overloading
+ * Having multiple methods with the same name but different parameters is called method overloading. 
+ * Method overloading can be done by changing:
+ * 		The number of parameters in two methods
+ *	 	The data types of the parameters of methods
+ * 		The order of the parameters of methods
+ */
+
+using System;
+namespace CSC180Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 3, y = 5;
+            double p = 1.0, q = 2.0, r = 3.5;
+            Console.WriteLine(Sum(x, y));
+            Console.WriteLine(Sum(p, q));
+            Console.WriteLine(Sum(p, q, r));
+        }
+
+        public static int Sum(int a, int b)
+        {
+            int sum = a + b;
+            return sum;
+        }
+
+        public static double Sum(double a, double b)
+        {
+            double sum = a + b;
+            return sum;
+        }
+
+        public static double Sum(double a, double b, double c)
+        {
+            double sum = a + b + c;
+            return sum;
+        }
+    }
+}
