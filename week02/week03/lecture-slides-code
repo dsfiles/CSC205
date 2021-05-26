@@ -116,3 +116,36 @@ namespace CSC180Week03
         }
     }
 }
+
+
+
+/*
+ * Week03 lecture slides - 5.10 More Recursion Example
+ * Fibonacci sequence
+ */
+
+using System;
+namespace CSC180Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Fibonacci(5));
+        }
+
+        public static double Fibonacci(int n)
+        {
+            if (n == 0 || n == 1)
+            {
+                //Console.WriteLine(n); // run this line to see the result
+                return 1;
+            }
+            else
+            {
+                //Console.WriteLine(n); // run this line to see the result 
+                return Fibonacci(n-1) + Fibonacci(n-2);
+            }
+        }
+    }
+}
