@@ -206,3 +206,65 @@ namespace CSC205Week02
         }
     }
 }
+
+
+
+/*
+ * Week02 lecture slides - 4.8 Recursion
+ * Factorial Function using Recursion
+ */
+
+using System;
+namespace CSC180Week2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Fact(5));
+        }
+
+        static int Fact(int n)
+        {
+            if (n == 0)
+                return 1;
+            else
+                return n * Fact(n - 1);
+        }
+    }
+}
+
+
+
+/*
+ * Week02 lecture slides - 4.8 Recursion
+ * A recurisive Countdown() method
+ */
+
+using System;
+namespace CSC180Week2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Countdown(4);
+        }
+
+        public static void Countdown(int n)
+        {
+            if (n == 0)
+            {
+                Console.WriteLine("Blast off!");
+            }
+            else
+            {
+                Console.WriteLine(n);
+                Countdown(n - 1);
+            }
+        }
+    }
+}
+
+
+
