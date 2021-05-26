@@ -1,0 +1,151 @@
+/*
+ * Week03 lecture slides - 5.2 Program Development
+ * A step-by-step incremental development way to compute the distance between two points, 
+ * given by the coordinates (x1; y1) and (x2; y2)
+ * Refer to textbook pages 47-49 for the stey-by-step development and intermediate methods
+ */
+
+using System;
+namespace CSC180Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Distance(0, 0, 3.0, 4.0));
+            Console.WriteLine(Distance2(0, 0, 3.0, 4.0));
+        }
+
+        public static double Distance(double x1, double y1, double x2, double y2)
+        {
+            double dx = x2 - x1;
+            double dy = y2 - y1;
+            double dsquared = dx * dx + dy * dy;
+            double result = Math.Sqrt(dsquared);
+            return result;
+        }
+
+        public static double Distance2(double x1, double y1, double x2, double y2)
+        {
+            return Math.Sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+        }
+    }
+}
+
+
+
+/*
+ * Week03 lecture slides - 5.4 Overloading
+ * Having multiple methods with the same name but different parameters is called method overloading. 
+ * Method overloading can be done by changing:
+ * 		The number of parameters in two methods
+ *	 	The data types of the parameters of methods
+ * 		The order of the parameters of methods
+ */
+
+using System;
+namespace CSC180Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 3, y = 5;
+            double p = 1.0, q = 2.0, r = 3.5;
+            Console.WriteLine(Sum(x, y));
+            Console.WriteLine(Sum(p, q));
+            Console.WriteLine(Sum(p, q, r));
+        }
+
+        public static int Sum(int a, int b)
+        {
+            int sum = a + b;
+            return sum;
+        }
+
+        public static double Sum(double a, double b)
+        {
+            double sum = a + b;
+            return sum;
+        }
+
+        public static double Sum(double a, double b, double c)
+        {
+            double sum = a + b + c;
+            return sum;
+        }
+    }
+}
+
+
+
+/*
+ * Week03 lecture slides - 5.4 Overloading
+ * More exercises
+ */
+
+using System;
+namespace CSC180Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("sum of these two numbers: " + Sum(1, 2) + "\n");
+            Console.WriteLine("sum of these two numbers: " + Sum(1, 2.0) + "\n");
+            Console.WriteLine("sum of these two numbers: " + Sum(1.0, 2) + "\n");
+            Console.WriteLine("sum of these two numbers: " + Sum(1.0, 2.0) + "\n");
+        }
+
+        public static int Sum(int a, int b)
+        {
+            Console.WriteLine($"{a} is int, {b} is int");
+            return a + b;
+        }
+
+        public static double Sum(double a, int b)
+        {
+            Console.WriteLine($"{a} is double, {b} is int");
+            return a + b;
+        }
+
+        public static double Sum(double a, double b)
+        {
+            Console.WriteLine($"{a} is double, {b} is double");
+            return a + b;
+        }
+    }
+}
+
+
+
+/*
+ * Week03 lecture slides - 5.10 More Recursion Example
+ * Fibonacci sequence
+ */
+
+using System;
+namespace CSC180Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Fibonacci(5));
+        }
+
+        public static double Fibonacci(int n)
+        {
+            if (n == 0 || n == 1)
+            {
+                //Console.WriteLine(n); // run this line to see the result
+                return 1;
+            }
+            else
+            {
+                //Console.WriteLine(n); // run this line to see the result 
+                return Fibonacci(n-1) + Fibonacci(n-2);
+            }
+        }
+    }
+}
