@@ -268,3 +268,28 @@ namespace CSC180Week2
 
 
 
+/*
+ * Week02 lecture slides - 4.8 Recursion
+ * Another interesting recursion method – NLines()
+ */
+
+using System;
+namespace CSC180Week2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            NLines(4);
+        }
+
+        public static void NLines(int n)
+        {
+            if (n > 0)
+            {
+                Console.WriteLine("-----");
+                NLines(n - 1);
+            }
+        }
+    }
+}
