@@ -314,3 +314,37 @@ namespace CSC205Week03
         }
     }
 }
+
+
+
+/*
+ * Week03 lecture slides - 6.2 The while Statement
+ */
+using System;
+namespace CSC205Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 1;
+            int result = 0;
+            while (i <= 10)
+            {
+                result = result + i;
+                i = i + 1;
+            }
+            
+            //do
+            //{
+            //    result = result + i;
+            //    i = i + 1;
+            //} while (i <= 10);
+            
+            Console.WriteLine(result);
+        }
+    }
+}
+
+
+
