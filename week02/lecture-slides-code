@@ -293,3 +293,50 @@ namespace CSC180Week2
         }
     }
 }
+
+
+
+/*
+ * Week03 lecture slides - Iteration vs. Recursion
+ * Recurisve Countdown method vs. Iterative Countdown method
+ */
+
+using System;
+namespace CSC180Week2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CountdownR(4);
+            Console.WriteLine();
+            CountdownI(4);
+        }
+
+        public static void CountdownR(int n)
+        {
+            if (n == 0)
+            {
+                Console.WriteLine("Blast off!");
+            }
+            else
+            {
+                Console.WriteLine(n);
+                CountdownR(n - 1);
+            }
+        }
+
+        public static void CountdownI(int n)
+        {
+            while (n > 0)
+            {
+                Console.WriteLine(n);
+                n--;
+            }
+            Console.WriteLine("Blast off!");
+        }
+    }
+}
+
+
+
