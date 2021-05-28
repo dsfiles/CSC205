@@ -247,6 +247,44 @@ namespace CSC205Week03
 
 
 /*
+ * Week03 lecture slides - 5.7 Boolean Methods
+ */
+
+using System;
+
+namespace CSC205Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool bigFlag = !IsSingleDigit(17);
+            Console.WriteLine(bigFlag);
+            Console.WriteLine(IsSingleDigit(2));
+        }
+        public static bool IsSingleDigit(int x)
+        {
+            return (x >= 0 && x < 10);
+        }
+        /*
+        public static bool IsSingleDigit(int x)
+        {
+            if (x >= 0 && x < 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        */
+    }
+}
+
+
+
+/*
  * Week03 lecture slides - 5.10 More Recursion Example
  * Fibonacci sequence
  */
