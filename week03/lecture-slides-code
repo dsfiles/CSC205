@@ -71,6 +71,62 @@ namespace CSC205Week03
 
 /*
  * Week03 lecture slides - 5.2 Program Development
+ */
+
+using System;
+
+namespace CSC205Week03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Distance(1.0, 2.0 ,4.0 ,6.0));
+        }
+
+        /*
+        public static double Distance (double x1, double y1, double x2, double y2)
+        {
+            return 0.0;
+        }
+
+        public static double Distance (double x1, double y1, double x2, double y2)
+        {
+            double dx = x2 - x1;
+            double dy = y2 - y1;
+            Console.WriteLine("dx is " + dx);
+            Console.WriteLine("dy is " + dy);
+            return 0.0;
+        }
+
+        public static double Distance (double x1, double y1, double x2, double y2)
+        {
+            double dx = x2 - x1;
+            double dy = y2 - y1;
+            double dsquared = dx * dx + dy * dy;
+            Console.WriteLine("dsquared is " + dsquared);
+            return 0.0;
+        }
+
+        public static double Distance (double x1, double y1, double x2, double y2)
+        {
+            double dx = x2 - x1;
+            double dy = y2 - y1;
+            double dsquared = dx * dx + dy * dy;
+            double result = Math.Sqrt(dsquared);
+            return result;
+        }
+        */
+        public static double Distance(double x1, double y1, double x2, double y2)
+        {
+            return Math.Sqrt( (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) );
+        }
+    }
+}
+
+
+/*
+ * Week03 lecture slides - 5.2 Program Development
  * A step-by-step incremental development way to compute the distance between two points, 
  * given by the coordinates (x1; y1) and (x2; y2)
  * Refer to textbook pages 47-49 for the stey-by-step development and intermediate methods
