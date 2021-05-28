@@ -340,3 +340,64 @@ namespace CSC180Week2
 
 
 
+/*
+ * 6.4 Two-dimensional tables
+ * Print a 6 x 6 multiplication table using nested while loops
+ */
+
+using System;
+namespace CSC250Week03
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 1;
+            while (i <= 6)
+            {
+                int j = 1;
+                while (j <= 6)
+                {
+                    Console.Write(i * j + "\t");
+                    j++;
+                }
+                Console.WriteLine();
+                i++;
+            }
+        }
+    }
+}
+
+
+/*
+ * 6.4 Two-dimensional tables
+ * Print a high x wide multiplication table using nested while loops
+ */
+
+using System;
+namespace CSC250Week03
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            WriteMultTable(6, 6);
+        }
+
+        public static void WriteMultTable(int high, int wide)
+        {
+            int i = 1;
+            while (i <= high)
+            {
+                int j = 1;
+                while (j <= wide)
+                {
+                    Console.Write(i * j + "\t");
+                    j++;
+                }
+                Console.WriteLine();
+                i++;
+            }
+        }
+    }
+}
