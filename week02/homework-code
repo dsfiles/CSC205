@@ -20,11 +20,12 @@ namespace CSC205Week02
     {
         static void Main(string[] args)
         {
-            int hour = 12, minute = 0, second = 0;
-            int secondsSinceMidnight;
-            secondsSinceMidnight = (hour * 60 + minute) * 60 + second;
+            int hour = 12, minute = 0;
+            double second = 0; // declare second as a double type
+            double secondsSinceMidnight;
+            secondsSinceMidnight = (hour * 60 + minute) * 60.0 + second;
             Console.WriteLine("Number of seconds since midnight: " + secondsSinceMidnight);
-            Console.WriteLine("Number of seconds remaining in the day: " + (24 * 60 * 60 - secondsSinceMidnight));
+            Console.WriteLine("Number of seconds remaining in the day: " + (24 * 60 * 60.0 - secondsSinceMidnight));
             Console.WriteLine("Fraction of the day that has passed: " + secondsSinceMidnight / (24 * 60 * 60.0));
         }
     }
