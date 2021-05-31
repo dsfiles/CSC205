@@ -54,13 +54,13 @@ namespace CSC205Week02
             uint i1 = 4825932; // or int
             byte b1 = 97; // or sbyte
             short s2 = -10000;
-            short u2 = 20000; // or short
+            short u2 = 20000; // or ushort
             byte b2 = 224;
             int i2 = 970700000; // or uint
             byte b3 = 112; // or sbyte
             sbyte s3 = -44;
             int i3 = -1000000;
-            ushort u3 = 1990; //or short
+            short u3 = 1990; //or ushort
             ulong u4 = 123456789123456789; // or long
             Console.WriteLine($"{u1}\n{s1}\n{i1}\n{b1}\n{s2}\n{u2}\n{b2}\n{i2}\n{b3}\n{s3}\n{i3}\n{u3}\n{u4}\n");
         }
