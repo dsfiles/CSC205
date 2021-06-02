@@ -29,3 +29,51 @@ class CSC205Quiz02
         printPattern(10);
     }
 }
+
+
+
+/*
+ * CSC205 Quiz02 - Week3
+ * 3. Write a method that computers the distance between two points (x1,y1,z1) and (x2, y2, z2 in space.
+ * https://www.calculatorsoup.com/calculators/geometry-solids/distance-two-points.php
+ */
+using System;
+
+namespace CSC205Quiz02 
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine(Distance(0, 0, 0, 1.0, 2.0, 3.0));
+        }
+
+        public static double Distance(double x1, double y1, double z1, double x2, double y2, double z2)
+        {
+            return Math.Sqrt( (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) + (z2-z1)*(z2-z1) );
+        }
+    }
+}
+
+
+/*
+ * CSC205 Quiz02 - Week3
+ * based on the code from Christopher
+ */
+using System;
+namespace CSC205Quiz02
+{
+    class Program
+    {
+        public static void Main()
+        {
+            var p1 = ValueTuple.Create(0,0,0);
+            var p2 = ValueTuple.Create(1,1,1);
+            Console.WriteLine(computeDistance(p1, p2));
+        }
+        public static double computeDistance(ValueTuple<double, double, double> p1, ValueTuple<double, double, double> p2)
+        {
+            return Math.Sqrt(Math.Pow(p1.Item1 - p2.Item1, 2) + Math.Pow(p1.Item2 - p2.Item2, 2) + Math.Pow(p1.Item3 - p2.Item3, 2));
+        }
+    }
+}
