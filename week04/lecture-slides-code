@@ -1,1 +1,201 @@
 emtpy
+
+
+
+
+
+/*
+ * The following code adds up 1, 2, 3 ... 100.
+ * fill in the missing pieces
+ */
+using System;
+class CSC205Week04Exercise
+{
+    public static void Main()
+    {
+        __(1)__;
+        for (int i=0; __(2)__; i++)
+        {
+            sum = sum + i;
+        }
+        Console.WriteLine(sum);
+    }
+}
+
+
+/*
+ * The following code computes and diplays 1!, 2!, 3!, ... 20!
+ */
+using System;
+class CSC205Week04Exercise
+{
+    public static void Main()
+    {
+        for (int i=0; i<=20; i++)
+        {
+            Console.WriteLine(__(3)___);
+        }
+    }
+
+    public static long Fact(int n)
+    {
+        __(4)__
+        for (int i = 1; i<=n; i++)
+        {
+            product = __(5)__;
+        }
+        return product;
+    }
+}
+
+/* answers:
+(1) int sum=0;
+(2) i<=100 or i<101
+(3) Fact(i)
+(4) long product = 1;
+(5) product * i
+*/
+
+
+/*
+ * Section 5.10 One more example of recursion - Fibonacci series
+ * textbook page 55
+ */
+using System;
+namespace CSC205
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine(Fun(5));
+        }
+
+        public static int Fun(int n)
+        {
+            if (n == 0 || n == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return Fun(n - 1) + Fun(n - 2);
+            }
+        }
+    }
+}
+
+
+
+
+/*
+ * 1. Use for loops to print a multiplication table for the values from 1 to 6 
+ * (as shown in the middle of page 67) using System;
+ */
+using System;
+namespace ThinkSharp
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            for (int i = 1; i <= 6; i++)
+            {
+                for (int j = 1; j <= 6; j++)
+                {
+                    Console.Write(j * i + "\t");
+                }
+                Console.WriteLine("");
+            }
+        }
+    }
+}
+
+
+
+//=======================================================
+
+/*
+ B.3 File input: S simple demo of reading a text file
+---- version 1 ----
+*/
+
+using System;
+using System.IO;
+
+namespace ThinkSharp
+{
+    public class ListFile
+    {
+        public static void Main()
+        {
+            processFile("words.txt");
+        }
+        private static void processFile(string filename)
+        {
+            string line;
+            int count = 1;
+            TextReader reader = new StreamReader(filename);
+            while (true)
+            {
+                line = reader.ReadLine();
+                if (line == null)
+                {
+                    break;
+                }
+                Console.WriteLine(count + ": " + line);
+                count++;
+            }
+            reader.Close();
+        }
+    }
+}
+
+
+
+/*
+ B.3 File input: S simple demo of reading a text file
+---- version 1 ----
+*/
+
+using System;
+using System.IO;
+
+namespace ThinkSharp
+{
+    public class ListFile
+    {
+
+        public static void Main()
+        {
+            try
+            {
+                processFile("words.txt");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("That didn't work. Here's why:");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
+
+        private static void processFile(string filename)
+        {
+            string line;
+            int count = 1;
+            TextReader reader = new StreamReader(filename);
+            while (true)
+            {
+                line = reader.ReadLine();
+                if (line == null)
+                {
+                    break;
+                }
+                Console.WriteLine(count + ": " + line);
+                count++;
+            }
+            reader.Close();
+        }
+    }
+}
