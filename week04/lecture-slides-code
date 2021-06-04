@@ -1,6 +1,121 @@
-emtpy
+/*
+ * CSC205 Week04
+ * More recursion using factorial functions
+ * Exercise: factorial, integer overflow, etc.
+ */
+
+using System;
+
+namespace CSC205Week04
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = 10;
+            int factorial = 1;
+            while(num>0)
+            {
+                factorial = factorial * num;
+                num--;
+            }
+            Console.WriteLine("10! = " + factorial + "\n");
+
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine($"{i}! = {Fact(i)}");
+            }
+            Console.WriteLine();
+
+            for (int i = 1; i <= 50; i++)
+            {
+                Console.WriteLine($"{i}! = {Fact2(i)}");
+            }
+        }
+
+        // this version uses an int variable to hold the result and integer overflow may happen if n > 13
+        public static int Fact(int n)
+        {
+            int i = 1;
+            int result = 1;
+            while (i <= n)
+            {
+                result *= i;
+                i++;
+            }
+            return result;
+        }
+
+        // this version use a double variable to hold big numbers
+        public static double Fact2(int n)
+        {
+            int i = 1;
+            double result = 1;
+            while (i <= n)
+            {
+                result *= i;
+                i++;
+            }
+            return result;
+        }
+    }
+}
 
 
+
+/*
+ * CSC205 Week04
+ * Lecture slides - 6.4 Two-dimensional Multiplication Tables
+ */
+
+using System;
+
+namespace CSC205Week04
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            WriteMultipleTables(6, 6);
+
+            //    int j = 1;
+            //    while (j <= 6)
+            //    {
+            //        WriteMultiples(j);
+            //        j++;
+            //        Console.WriteLine();
+            //    }
+
+            //}
+
+            //public static void WriteMultiples(int n)
+            //{
+            //    int i = 1;
+            //    while (i <= 6)
+            //    {
+            //        Console.Write(n * i + " ");
+            //        i++;
+            //    }
+            //}
+
+        }
+        public static void WriteMultipleTables(int m, int n)
+        {
+            int j = 1;
+            while (j <= 6)
+            {
+                int i = 1;
+                while (i <= 6)
+                {
+                    Console.Write(j * i + " ");
+                    i++;
+                }
+                j++;
+                Console.WriteLine();
+            }
+        }
+    }
+}
 
 
 
@@ -21,6 +136,7 @@ class CSC205Week04Exercise
         Console.WriteLine(sum);
     }
 }
+
 
 
 /*
@@ -48,13 +164,7 @@ class CSC205Week04Exercise
     }
 }
 
-/* answers:
-(1) int sum=0;
-(2) i<=100 or i<101
-(3) Fact(i)
-(4) long product = 1;
-(5) product * i
-*/
+
 
 
 /*
