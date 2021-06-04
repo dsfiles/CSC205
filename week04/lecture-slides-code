@@ -164,6 +164,14 @@ class CSC205Week04Exercise
     }
 }
 
+/* answers:
+(1) int sum=0;
+(2) i<=100 or i<101
+(3) Fact(i)
+(4) long product = 1;
+(5) product * i
+*/
+
 
 
 /*
