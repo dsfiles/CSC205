@@ -197,7 +197,6 @@ namespace CSC205
 
 
 
-
 /*
  * 1. Use for loops to print a multiplication table for the values from 1 to 6 
  * (as shown in the middle of page 67) using System;
@@ -217,6 +216,84 @@ namespace ThinkSharp
                 }
                 Console.WriteLine("");
             }
+        }
+    }
+}
+
+
+
+/*
+ * CSC205 Week04
+ * Lecture slides - Appendix B - Input & Output
+ */
+
+using System;
+
+namespace CSC205
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            string s;
+            Console.WriteLine("Please enter your name:");
+            s = Console.ReadLine();
+            Console.WriteLine("Please enter your age (1-99):");
+            int age = 0;
+            age = Convert.ToInt32(Console.ReadLine());
+            Greeting(s, age);
+        }
+        public static void Greeting(string name, int age)
+        {
+            Console.WriteLine("Hello " + name + "!");
+            if (age > 21)
+                Console.WriteLine("you can buy alcohol!");
+            else
+                Console.WriteLine("Sorry, you can't buy alcohol!");
+        }
+    }
+}
+
+
+
+/*
+ * CSC205 Week04
+ * Lecture slides - Appendix B - Input & Output
+ */
+
+using System;
+
+namespace CSC205
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c;
+            Console.WriteLine("Enter the first interger:");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the second interger:");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the third interger:");
+            c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"The largest number among {a}, {b} and {c}: {LargestOfThree(a, b, c)}");
+        }
+        public static int LargestOfThree(int a, int b, int c)
+        {
+            int result;
+            if (a >= b && a >= c)
+            {
+                result = a;
+            }
+            else if (b >= c && b >= a)
+            {
+                result = b;
+            }
+            else
+            {
+                result = c;
+            }
+            return result;
         }
     }
 }
