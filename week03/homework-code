@@ -71,7 +71,7 @@ namespace Fermat
         }
         public static void Main()
         {
-            checkFermat(3, 4, 5, 2);
+            checkFermat(3, 4, 5, 3);
         }
     }
 }
