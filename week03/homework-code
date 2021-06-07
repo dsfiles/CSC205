@@ -70,3 +70,44 @@ namespace Fermat
 
 
 
+/*
+ * CSC205 Week03 Programming Assignment
+ * Exercise 5.2. page 56-57
+ */
+
+using System;
+
+namespace CSC205Week03
+{
+    class Program
+    {
+        public static double Yikes(double x)
+        {
+            double a, b, c;
+            a = x;
+            b = Math.Exp(-x);
+            c = Math.Sqrt((1 - Math.Exp(-x)));
+            return Multadd(a, b, c);
+        }
+        public static double Multadd(double a, double b, double c)
+        {
+            return a * b + c;
+        }
+        static void Main(string[] args)
+        {
+            // test trigonometric formula
+            double a, b, c;
+            a = 1 / 2.0;
+            b = Math.Cos(Math.PI / 4);
+            c = Math.Sin(Math.PI / 4);
+            Console.WriteLine("Trigonometric formula result: {0:0.00}", Multadd(a, b, c));
+            // test logarithmic formula
+            a = 1;
+            b = Math.Log(10);
+            c = Math.Log(20);
+            Console.WriteLine("Logarithmic formula result: {0:0.00}", Multadd(a, b, c));
+            // test Yikes method
+            Console.WriteLine("Result using Yikes method with x=1: {0:0.00}", Yikes(1));
+        }
+    }
+}
