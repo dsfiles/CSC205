@@ -1,0 +1,72 @@
+/*
+ * CSC205 Week03 Programming Assignment
+ * Exercise 4.2. textbook page 42
+ * Hint: press F11 to run the program step by step and you'll see the flow of execution.
+ */
+
+using System;
+public class Buzz
+{
+    public static void Baffle(string blimp)
+    {
+        Console.WriteLine(blimp); // (5)
+        Zippo("ping", -5); // (6, 9)
+    }
+    public static void Zippo(string quince, int flag)
+    {
+        if (flag < 0) // (2, 7)
+        {
+            Console.WriteLine(quince + " zoop"); // (8)
+        }
+        else
+        {
+            Console.WriteLine("ik"); // (3)
+            Baffle(quince); // (4, 10)
+            Console.WriteLine("boo-wa-ha-ha"); // (11)
+        }
+    }
+    public static void Main(string[] args)
+    {
+        Zippo("rattle", 13); // (1, 12)
+    }
+}
+
+/* Output:
+ik
+rattle
+ping zoop
+boo-wa-ha-ha
+*/
+
+
+
+/*
+ * CSC205 Week03 Programming Assignment
+ * Exercise 4.5. on page 44
+ */
+
+using System;
+namespace Fermat
+{
+    class Program
+    {
+        public static void checkFermat(int a, int b, int c, int n)
+        {
+            if (((Math.Pow(a, n) + Math.Pow(b, n)) == Math.Pow(c, n)) && (n != 2))
+            {
+                Console.WriteLine("Holy smokes, Fermat was wrong!");
+            }
+            else
+            {
+                Console.WriteLine("No, that doesn't work.");
+            }
+        }
+        public static void Main()
+        {
+            checkFermat(3, 4, 5, 2);
+        }
+    }
+}
+
+
+
