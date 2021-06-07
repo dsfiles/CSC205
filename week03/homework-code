@@ -43,6 +43,8 @@ boo-wa-ha-ha
 /*
  * CSC205 Week03 Programming Assignment
  * Exercise 4.5. on page 44
+ * Write a method named CheckFermat to check Fermat's Last Theorem saying that 
+ * there are no integers a, b, and c such that a^n + b^n = c^n except in the case when n = 2.
  */
 
 using System;
