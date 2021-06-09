@@ -1,0 +1,31 @@
+/*
+ * CSC205 Quiz#4
+ * 1. Read the following program and explain what it does. No need to explain every line of code except the for loop. 
+ * Explanation:
+ * The program uses a for loop to compute and print the Fibonacci sequence.
+ * varibles n1, n2, n3 are used to hold three consecutive numbers.
+ */
+
+using System;
+public class MyClass
+{
+    public static void Main(string[] args)
+    {
+        int n1 = 0, n2 = 1, n3, i, number;
+        Console.Write("Enter a positive integer: ");
+        number = int.Parse(Console.ReadLine());
+        Console.Write(n1 + " " + n2 + " ");
+        for (i = 2; i < number; i++)
+        {
+            n3 = n1 + n2;
+            Console.Write(n3 + " ");
+            n1 = n2;
+            n2 = n3;
+        }
+        Console.WriteLine();
+    }
+}
+
+
+
+
