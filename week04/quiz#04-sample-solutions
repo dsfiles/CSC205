@@ -28,4 +28,57 @@ public class MyClass
 
 
 
+/*
+ * CSC205 Quiz#4
+ * 2. Describe the program below.
+ * Answer:
+ * The DoSomething method displays a string in reverse order.
+ */
+
+using System;
+public class Program
+{
+    public static void DoSomething(string str)
+    {
+        int i = str.Length - 1;
+        while (i >= 0)
+        {
+            Console.Write($"{str[i]} ");
+            i--;
+        }
+        Console.Write("\n");
+    }
+    public static void Main()
+    {
+        DoSomething("abcba");
+    }
+}
+
+
+
+/*
+ * CSC205 Quiz#4
+ * 3. Write a program using loops to print a pattern like following:
+    1
+    22
+    333
+    4444
+    55555
+ */
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine();
+        }
+    }
+}
 
