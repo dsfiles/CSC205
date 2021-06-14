@@ -77,6 +77,18 @@ namespace Week04Homework
                 Console.WriteLine(s[i]);
             }
         }
+        public static void WriteBackward2(string s)
+        {
+            if (Length(s) == 1)
+            {
+                Console.WriteLine(s);
+            }
+            else
+            {
+                WriteBackward2(Rest(s));
+                Console.WriteLine(First(s));
+            }
+        }        
         public static string ReverseString(string s)
         {
             if (Length(s) > 1)
@@ -99,6 +111,8 @@ namespace Week04Homework
             WriteString(str);
             Console.WriteLine($"\nPrint \"{str}\" backward , one on each line:");
             WriteBackward(str);
+            Console.WriteLine($"\nPrint \"{str}\" backward , one on each line, again:");
+            WriteBackward2(str);
             string backwards = ReverseString("Allen Downey");
             Console.WriteLine("\nReverse of \"Allen Downey\":");
             Console.WriteLine(backwards);
