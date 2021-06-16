@@ -19,7 +19,7 @@ namespace CSC205Week05
             // create and initialize another Time object called t2 with hour=16, minute=20, second=3.4) 
             (2)
 
-            // invoke WriteTime2 to display t2
+            // invoke WriteTime2 to display t1
             (3)
 
             // invoke WriteTime2 to display t2
