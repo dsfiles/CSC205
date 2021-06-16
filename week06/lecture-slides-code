@@ -34,6 +34,25 @@ namespace CSC205Week05
     }
 }
 
+Answers:
+            // create a Time object called t1 using the default constructor
+            Time t1 = new Time();
+ 
+            // create and initialize another Time object called t2 with hour=16, minute=20, second=3.4) 
+            Time t2 = new Time(16, 20, 6.28);
+
+            // invoke WriteTime2 to display t2
+            Time.WriteTime(t1);
+
+            // invoke WriteTime2 to display t2
+            Time.WriteTime2(t2);
+
+            // invoke WriteTime3 to display t1
+            t1.WriteTime3();
+
+            // invoke WriteTime4 to display t1
+            t1.WriteTime4(t1);
+
 
 /*
  * in-class exercise - Time class
