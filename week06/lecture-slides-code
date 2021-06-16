@@ -1,4 +1,87 @@
 /*
+ * in-class exercise - fill the missing code
+ */
+namespace CSC205Week05
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+
+            // create a Time object called t1 using the default constructor
+            (1)
+            
+            // set t1's fields
+            t1.Hour = 15; 
+            t1.Minute = 18;
+            t1.Second = 3.14;
+
+            // create and initialize another Time object called t2 with hour=16, minute=20, second=3.4) 
+            (2)
+
+            // invoke WriteTime2 to display t2
+            (3)
+
+            // invoke WriteTime2 to display t2
+            (4)
+
+            // invoke WriteTime3 to display t1
+            (5)
+
+            // invoke WriteTime4 to display t1
+            (6)
+        }
+    }
+}
+
+
+/*
+ * in-class exercise - Time class
+ */
+using System;
+
+namespace CSC205Week05
+{
+    class Time
+    {
+        public int Hour, Minute;
+        public double Second;
+        public Time()
+        {   // Default constructor
+            this.Hour = 0;
+            this.Minute = 0;
+            this.Second = 0.0;
+        }
+        public Time(int hour, int minute, double second)
+        {   // Parametric constructor
+            this.Hour = hour;
+            this.Minute = minute;
+            this.Second = second;
+        }
+        public static void WriteTime(Time t)
+        {
+            Console.WriteLine(t.Hour + ":" + t.Minute + ":" + t.Second);
+        }
+        public static void WriteTime2(Time t)
+        {   // a version that uses String.Format
+            Console.WriteLine(String.Format("{0:D2}:{1:D2}:{2:D2}",
+            t.Hour, t.Minute, (int)t.Second));
+        }
+        public void WriteTime3()
+        {  // a version uses this
+            Console.WriteLine(this.Hour + ":" + this.Minute + ":" + this.Second);
+        }
+        public void WriteTime4(Time t)
+        {   // a version takes an argument of Time object
+            Console.WriteLine(t.Hour + ":" + t.Minute + ":" + t.Second);
+        }
+    }
+}
+
+
+
+
+/*
  * CSC205 Week06
  * Class Inheritance Example - Vehicle class
  */
