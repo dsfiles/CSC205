@@ -181,4 +181,142 @@ namespace CSC205
 
 
 
+/*
+ * CSC205 Week05 - Another Example
+ * Class & Object Program #1
+ */
+using System;
+public class Book
+{
+    public string title;
+    public string isbn;
+    public double price;
+}
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Book book1 = new Book();
+        book1.title = "C# 9 and .NET 5";
+        book1.isbn = "180056810X";
+        book1.price = 42.74;
+        Console.WriteLine(book1.title);
+
+        Book book2 = new Book();
+        book2.title = "C# in Depth";
+        book2.isbn = "1617294535";
+        book2.price = 38.99;
+        Console.WriteLine(book2.title);
+    }
+}
+
+
+/*
+ * CSC205 Week05 - Another Example
+ * Class & Object Program #2
+ */
+using System;
+public class Book
+{
+    public string title;
+    public string isbn;
+    public double price;
+    public Book(string t, string i, double p)
+    {
+        title = t;
+        isbn = i;
+        price = p;
+    }
+}
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Book book1 = new Book("C# 9 and .NET 5", "180056810X", 42.74);
+        Console.WriteLine(book1.title);
+
+        Book book2 = new Book("C# in Depth", "1617294535", 38.99);
+        Console.WriteLine(book2.title);
+    }
+}
+
+
+/*
+ * CSC205 Week05 - Another Example
+ * Class & Object Program #3
+ */
+using System;
+public class Book
+{
+    public string title;
+    public string isbn;
+    public double price;
+    public Book()
+    {
+        title = "";
+        isbn = "";
+        price = 0.0;
+    }
+    public Book(string t, string i, double p)
+    {
+        title = t;
+        isbn = i;
+        price = p;
+    }
+}
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Book book1 = new Book("C# 9 and .NET 5", "180056810X", 42.74);
+        Console.WriteLine(book1.title);
+        Book book2 = new Book("C# in Depth", "1617294535", 38.99);
+        Console.WriteLine(book2.title);
+        Book book3 = new Book();
+        Console.WriteLine("book 3 title: " + book3.title);
+    }
+}
+
+
+/*
+ * CSC205 Week05 - Another Example
+ * Class & Object Program #4
+ */
+using System;
+public class Book
+{
+    public string title;
+    public string isbn;
+    public double price;
+    public Book()
+    {
+        title = "";
+        isbn = "";
+        price = 0.0;
+    }
+    public Book(string t, string i, double p)
+    {
+        title = t;
+        isbn = i;
+        price = p;
+    }
+    public void Display()
+    { Console.WriteLine($"Title: {title}, ISBN: {isbn}, Price: {price}"); }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Book book1 = new Book("book 1", "121", 10.99);
+        Book book2 = new Book("book 2", "122", 12.99);
+        Book book3 = new Book("book 3", "123", 18.88);
+        Book book4 = new Book("book 4", "124", 5.99);
+        Book book5 = new Book("book 5", "125", 20.0);
+        book5.Display();
+    }
+}
+
+
+
 
