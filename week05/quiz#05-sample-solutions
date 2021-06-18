@@ -60,3 +60,55 @@ namespace CSC205Quiz06
         }
     }
 }
+
+
+
+/*
+ * CSC205 Quiz#6
+  1. 1. A word is said to be a "doubloon" if every letter that appears in the word appears exactly twice. 
+     For example, the following are all the doubloons:
+        abba, anna, appall, appearer, appeases, arraigning, beriberi, bilabial, boob,
+        caucasus, coco, Dada, deed, emmett, hannah, horseshoer, intestines, isis,
+        mama, mimi, murmur, noon, otto, papa, peep, reappear, redder, sees, shanghaiings, toto
+     Write a method called IsDoubloon that returns true if the given word is a doubloon and false otherwise.
+ */
+
+// A sample solution from Yauchin using brute fource!
+using System;
+
+namespace CSC205Quiz06
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(IsDoubloon("asasb"));
+            Console.WriteLine(IsDoubloon("asas"));
+
+            bool IsDoubloon(string word)
+            {
+                if (word.Length % 2 == 1)
+                {
+                    return false;
+                }
+                int count = 0;
+                for (int i = 0; i < word.Length; i++)
+                {
+                    count = 0;
+                    for (int j = 0; j < word.Length; j++)
+                    {
+                        if (word[j] == word[i] && i != j)
+                        {
+                            count++;
+                        }
+                    }
+                    if (count != 1)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+    }
+}
