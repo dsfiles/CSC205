@@ -73,7 +73,7 @@ namespace CSC205Quiz06
      Write a method called IsDoubloon that returns true if the given word is a doubloon and false otherwise.
  */
 
-// A sample solution using brute fource (nested loops)!
+// Sample solution #1 - using brute fource (nested loops)!
 using System;
 
 namespace CSC205Quiz06
@@ -84,37 +84,36 @@ namespace CSC205Quiz06
         {
             Console.WriteLine(IsDoubloon("asasb"));
             Console.WriteLine(IsDoubloon("asas"));
-
-            bool IsDoubloon(string word)
+        }
+        static bool IsDoubloon(string word)
+        {
+            if (word.Length % 2 == 1)
             {
-                if (word.Length % 2 == 1)
+                return false;
+            }
+            int count = 0;
+            for (int i = 0; i < word.Length; i++)
+            {
+                count = 0;
+                for (int j = 0; j < word.Length; j++)
+                {
+                    if (word[j] == word[i] && i != j)
+                    {
+                        count++;
+                    }
+                }
+                if (count != 1)
                 {
                     return false;
                 }
-                int count = 0;
-                for (int i = 0; i < word.Length; i++)
-                {
-                    count = 0;
-                    for (int j = 0; j < word.Length; j++)
-                    {
-                        if (word[j] == word[i] && i != j)
-                        {
-                            count++;
-                        }
-                    }
-                    if (count != 1)
-                    {
-                        return false;
-                    }
-                }
-                return true;
             }
+            return true;
         }
     }
 }
 
 
-
+// Sample solution #2 - use Dictionary!
 using System;
 using System.Collections.Generic;
 
@@ -127,14 +126,15 @@ namespace CSC205Quiz06
             Console.WriteLine(IsDoubloon("asasb"));
             Console.WriteLine(IsDoubloon("asas"));
         }
+	
         public static bool IsDoubloon(string word)
         {
             /* 
-             * Brute Force Way:
              *  Create a dictionary with each letter in the word as the key. The
              *  value will be how many times that letter has occurred. Each letter
              *  should be in the word exactly two times to be a doubloon.
              */
+	     
             Dictionary<char, int> letters = new Dictionary<char, int>();
 
             foreach (char letter in word)
