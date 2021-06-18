@@ -73,7 +73,7 @@ namespace CSC205Quiz06
      Write a method called IsDoubloon that returns true if the given word is a doubloon and false otherwise.
  */
 
-// A sample solution from Yauchin using brute fource!
+// A sample solution using brute fource (nested loops)!
 using System;
 
 namespace CSC205Quiz06
@@ -109,6 +109,58 @@ namespace CSC205Quiz06
                 }
                 return true;
             }
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+
+namespace CSC205Quiz06
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(IsDoubloon("asasb"));
+            Console.WriteLine(IsDoubloon("asas"));
+        }
+        public static bool IsDoubloon(string word)
+        {
+            /* 
+             * Brute Force Way:
+             *  Create a dictionary with each letter in the word as the key. The
+             *  value will be how many times that letter has occurred. Each letter
+             *  should be in the word exactly two times to be a doubloon.
+             */
+            Dictionary<char, int> letters = new Dictionary<char, int>();
+
+            foreach (char letter in word)
+            {
+                // convert each letter to lowercase and check for doubles
+                char lowerLetter = Char.ToLower(letter);
+
+                // Add each letter and its count to the dictionary
+                if (letters.ContainsKey(lowerLetter))
+                {
+                    letters[lowerLetter]++;
+                }
+                else
+                {
+                    letters[lowerLetter] = 1;
+                }
+            }
+
+            foreach (KeyValuePair<char, int> letter in letters)
+            {
+                if (letter.Value != 2)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
