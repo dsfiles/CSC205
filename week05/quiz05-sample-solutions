@@ -22,16 +22,19 @@ namespace CSC205Quiz06
         }
         static bool IsDoubloon(string word)
         {
+	    // if the length of string is not even, rule it out!
             if (word.Length % 2 == 1)
             {
                 return false;
             }
+	    
             int count = 0;
             for (int i = 0; i < word.Length; i++)
             {
                 count = 0;
                 for (int j = 0; j < word.Length; j++)
                 {
+		    // does not count self when i and j are equal
                     if (word[j] == word[i] && i != j)
                     {
                         count++;
