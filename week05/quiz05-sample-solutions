@@ -51,7 +51,52 @@ namespace CSC205Quiz06
 }
 
 
-// Sample solution #2 - use Dictionary!
+
+// Sample solution #2 - a slight variance of #1 brute fource (nested loops)!
+using System;
+
+namespace CSC205Quiz06
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(IsDoubloon("asasb"));
+            Console.WriteLine(IsDoubloon("aacbbc"));
+        }
+        static bool IsDoubloon(string word)
+        {
+            // if the length of string is not even, rule it out!
+            if (word.Length % 2 == 1)
+            {
+                return false;
+            }
+
+            int count = 0;
+            for (int i = 0; i < word.Length; i++)
+            {
+                count = 0;
+                for (int j = 0; j < word.Length; j++)
+                {
+                    if (word[j] == word[i])
+                    {
+                        count++; // count the number of appearances of any letter
+                    }
+                }
+                if (count != 2)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+}
+
+
+
+// Sample solution #3 - use of a new data structure, dictionary!
+
 using System;
 using System.Collections.Generic;
 
