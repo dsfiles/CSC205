@@ -90,6 +90,52 @@ namespace CSC205Week05
 
 /*
  * CSC205 Week05 Programming Assignment
+ * Exercise 7.5. The point of this exercise is to explore types and fill in some of the details
+ * that aren't covered in the chapter.
+ */
+
+using System;
+
+namespace CSC205Week05
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool b = true;
+            char c = 'c';
+            int i = 2;
+            string s = "hello";
+            //Console.WriteLine(b + b);
+            //Console.WriteLine(b + c);
+            //Console.WriteLine(b + i);
+            Console.WriteLine(b + s);
+            Console.WriteLine("\n");
+
+            //Console.WriteLine(c + b);
+            Console.WriteLine(c + c);
+            Console.WriteLine(c + i); // why?
+            Console.WriteLine(c + s);
+            Console.WriteLine("\n");
+
+            //Console.WriteLine(i + b);
+            Console.WriteLine(i + c);
+            Console.WriteLine(i + i);
+            Console.WriteLine(i + s);
+            Console.WriteLine("\n");
+
+            Console.WriteLine(s + b);
+            Console.WriteLine(s + c);
+            Console.WriteLine(s + i);
+            Console.WriteLine(s + s);
+        }
+    }
+}
+
+
+
+/*
+ * CSC205 Week05 Programming Assignment
  * Exercise 7.10. Check if a word is abecedarian that the letters 
  * in the word appear in alphabetical order.
  */
