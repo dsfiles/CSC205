@@ -85,3 +85,42 @@ namespace CSC205Week05
         }
     }
 }
+
+
+
+/*
+ * CSC205 Week05 Programming Assignment
+ * Exercise 7.10. Check if a word is abecedarian that the letters 
+ * in the word appear in alphabetical order.
+ */
+
+using System;
+
+namespace CSC205Week05
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] arr = { "abdest", "acknow", "acorsy", "adempt", "adipsy", "agnosy",
+                             "best", "behint", "beknow", "bijoux", "biopsy", "cestuy", "chintz",
+                             "deflux", "dehors", "dehort", "deinos", "diluvy", "dimpsy", "apple" };
+            foreach (var item in arr)
+            {
+                Console.WriteLine("Is " + item + " abecedarian?\t" + IsAbecedarian(item));
+            }
+        }
+
+        static bool IsAbecedarian(string w)
+        {
+            for (int i = 0; i < w.Length - 1; i++)
+            {
+                if (w[i] > w[i + 1])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+}
