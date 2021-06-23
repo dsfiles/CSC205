@@ -1,0 +1,88 @@
+/*
+ * CSC205 Week05 Programming Assignment
+ * Exercise 7.4. (pages 81-82)
+ * Answer:
+ * 1. see below.
+ * 2. Balance method checks if parentheses are balanced and return 0 if balanced, 
+ *    return a positive number if the number of '(' is greater than that of ')', 
+ *    and vice versa.
+ */
+
+using System;
+
+namespace Week06Homework
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s = "((3 + 7) * 2)";
+            Console.WriteLine(Balance(s));
+        }
+
+        static int Balance(string s)
+        {
+            int len = s.Length;
+            int i = 0;
+            int count = 0;
+            while (i < len)
+            {
+                char c = s[i];
+                if (c == '(')
+                {
+                    count = count + 1;
+                }
+                else if (c == ')')
+                {
+                    count = count - 1;
+                }
+                i = i + 1;
+            }
+            return count;
+        }
+    }
+}
+
+
+
+
+/*
+ * CSC205 Week05 Programming Assignment
+ * Exercise 7.4. (pages 81-82)
+ * Answer: 3. Generalization to check the balance of [] and {}
+ */
+
+using System;
+
+namespace Week06Homework
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s = "{[(3 + 7) * 2]/3.14}";
+            Console.WriteLine(Balance(s));
+        }
+
+        static int Balance(string s)
+        {
+            int len = s.Length;
+            int i = 0;
+            int count = 0;
+            while (i < len)
+            {
+                char c = s[i];
+                if (c == '(' || c == '[' || c == '{')
+                {
+                    count = count + 1;
+                }
+                else if (c == ')' || c == ']' || c == '}')
+                {
+                    count = count - 1;
+                }
+                i = i + 1;
+            }
+            return count;
+        }
+    }
+}
