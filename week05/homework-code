@@ -136,6 +136,42 @@ namespace CSC205Week05
 
 /*
  * CSC205 Week05 Programming Assignment
+ * Exercise 7.6. What is the output of this program? 
+ * Describe in a sentence what Mystery does (not how it works).
+ * Answer: Mystery prints out a string character by character along with its index number, 
+ * and finally, return a string which is the reverse of original string.
+ */
+
+using System;
+
+namespace ThinkSharp
+{
+    public class MysteryClass
+    {
+        public static string Mystery(string s)
+        {
+            int i = s.Length - 1;
+            string total = "";
+            while (i >= 0)
+            {
+                char ch = s[i];
+                Console.WriteLine(i + " " + ch);
+                total = total + ch;
+                i--;
+            }
+            return total;
+        }
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Mystery("Allen"));
+        }
+    }
+}
+
+
+
+/*
+ * CSC205 Week05 Programming Assignment
  * Exercise 7.10. Check if a word is abecedarian that the letters 
  * in the word appear in alphabetical order.
  */
