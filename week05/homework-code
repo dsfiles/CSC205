@@ -104,30 +104,27 @@ namespace CSC205Week05
         {
             bool b = true;
             char c = 'c';
-            int i = 2;
-            string s = "hello";
+            int i = 3;
+            string s = "Hi";
             //Console.WriteLine(b + b);
             //Console.WriteLine(b + c);
             //Console.WriteLine(b + i);
-            Console.WriteLine(b + s);
-            Console.WriteLine("\n");
+            Console.WriteLine($"boolean + string = {b+s} (data type: {(b+s).GetType()})");
 
             //Console.WriteLine(c + b);
-            Console.WriteLine(c + c);
-            Console.WriteLine(c + i); // why?
-            Console.WriteLine(c + s);
-            Console.WriteLine("\n");
+            Console.WriteLine($"char + char = {c+c} (data type: {(c+c).GetType()})");
+            Console.WriteLine($"char + int = {c+i} (data type: {(c+i).GetType()})");
+            Console.WriteLine($"char + string = {c+s} (data type: {(c+s).GetType()})");
 
             //Console.WriteLine(i + b);
-            Console.WriteLine(i + c);
-            Console.WriteLine(i + i);
-            Console.WriteLine(i + s);
-            Console.WriteLine("\n");
+            Console.WriteLine($"int + char = {i+c} (data type: {(i+c).GetType()})");
+            Console.WriteLine($"int + int = {i+i} (data type: {(i+i).GetType()})");
+            Console.WriteLine($"int + string = {i+s} (data type: {(i+s).GetType()})");
 
-            Console.WriteLine(s + b);
-            Console.WriteLine(s + c);
-            Console.WriteLine(s + i);
-            Console.WriteLine(s + s);
+            Console.WriteLine($"string + boolean = {s+b} (data type: {(s+b).GetType()})");
+            Console.WriteLine($"string + char = {s+c} (data type: {(s+c).GetType()})");
+            Console.WriteLine($"string + int = {s+i} (data type: {(s+i).GetType()})");
+            Console.WriteLine($"string + string = {s+s} (data type: {(s+s).GetType()})");
         }
     }
 }
