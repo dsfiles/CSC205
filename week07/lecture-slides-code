@@ -169,3 +169,32 @@ public class Program
 
 
 
+/*
+ * CSC205 Week07 - code from lecture slides
+ * Interface – An Example
+ * https://www.w3schools.com/cs/cs_interface.asp
+ */
+
+using System;
+interface IAnimal // Interface
+{
+    void animalSound(); // interface method (empty body)
+}
+class Pig : IAnimal
+{  // Pig "implements" the IAnimal interface
+    public void animalSound()
+    {
+        Console.WriteLine("The pig says: wee wee");
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Pig myPig = new Pig();  // Create a Pig object
+        myPig.animalSound();
+    }
+}
+
+
+
