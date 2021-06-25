@@ -1,6 +1,7 @@
 /*
  * CSC205 Week07 - code from lecture slides
- * User-defined Point class implicitly inherits the Object class and override its Equals and ToString methods
+ * User-defined Point class implicitly inherits the Object class and overrides Object's Equals and ToString methods
+ * https://docs.microsoft.com/en-us/dotnet/api/system.object?view=net-5.0
  */
 
 using System;
@@ -36,6 +37,73 @@ public sealed class App
         Console.WriteLine(Object.Equals(p1, p2));
         // The line below displays: p1's value is: (1, 2)
         Console.WriteLine($"p1's value is: {p1.ToString()}");
+    }
+}
+
+
+
+/*
+ * CSC205 Week07 - code from lecture slides
+ * C# Property - version 1
+ * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
+ */
+
+using System;
+
+namespace CSC205Week07
+{
+    class Person
+    {
+        private string name; // field
+        public Person(string name)
+        { this.name = name; }
+        public string Name   // property
+        {
+            get { return name; } // get method
+            set { name = value; }// set method
+                                 // or simply use { get; set; } to
+                                 // replace the above two lines
+        }
+    }
+
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Person p = new Person("Abby");
+            Console.WriteLine(p.Name);
+            p.Name = "Tom";
+            Console.WriteLine(p.Name);
+        }
+    }
+}
+
+
+
+/*
+ * CSC205 Week07 - code from lecture slides
+ * C# Property - version 2: Auto-implemented properties
+ * ref: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
+ */
+
+using System;
+
+namespace CSC205Week07
+{
+    class Person
+    {
+        public string Name { get; set; }   // Auto-implemented property
+    }
+
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Person p = new Person {Name="Abby"};
+            Console.WriteLine(p.Name);
+            p.Name = "Tom";
+            Console.WriteLine(p.Name);
+        }
     }
 }
 
