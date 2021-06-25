@@ -1,5 +1,5 @@
 /*
- * CSC205 Week7 Programming Assignment
+ * CSC205 Week7 Programming Assignment #1
  * key concepts: abstract class/method; inheritance; constructor; array of objects
  * Shape class: Shape.cs
  */
@@ -43,7 +43,7 @@ public class Circle : Shape
 
 
 /*
- * CSC205 Week7 Programming Assignment
+ * CSC205 Week7 Programming Assignment #1
  * key concepts: abstract class/method; inheritance; constructor; array of objects
  * Tester: Program.cs
  */
@@ -62,9 +62,11 @@ public class Program
 }
 
 
+//===================================================================================
+
 
 /*
- * CSC205 Week7 Programming Assignment
+ * CSC205 Week7 Programming Assignment #2
  * Calculator class: Calculator.cs
  * Source: https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019
  */
@@ -109,7 +111,7 @@ namespace Calculator
 
 
 /*
- * CSC205 Week7 Programming Assignment
+ * CSC205 Week7 Programming Assignment #2
  * Tester: Program.cs
  * Source: https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019
  */
