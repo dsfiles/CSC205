@@ -1,3 +1,8 @@
+/*
+ * CSC205 Week07 - code from lecture slides
+ * User-defined Point class implicitly inherits the Object class and override its Equals and ToString methods
+ */
+
 using System;
 class Point
 {
@@ -28,8 +33,11 @@ public sealed class App
         var p1 = new Point(1, 2);
         // Make another variable that references the first Point object.
         var p2 = p1;
-	 Console.WriteLine(Object.Equals(p1, p2));
+        Console.WriteLine(Object.Equals(p1, p2));
         // The line below displays: p1's value is: (1, 2)
         Console.WriteLine($"p1's value is: {p1.ToString()}");
     }
 }
+
+
+
