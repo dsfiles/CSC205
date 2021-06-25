@@ -1,0 +1,35 @@
+using System;
+class Point
+{
+    public int x, y;
+    public Point(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+    public override bool Equals(object obj)
+    {   // If this and obj do not refer to the same type, then they are not equal.
+        if (obj.GetType() != this.GetType()) return false;
+        // Return true if  x and y fields match.
+        var other = (Point)obj;
+        return (this.x == other.x) && (this.y == other.y);
+    }
+    // Return the point's value as a string.
+    public override String ToString()
+    {
+        return $"({x}, {y})";
+    }
+}
+public sealed class App
+{
+    static void Main()
+    {
+        // Construct a Point object.
+        var p1 = new Point(1, 2);
+        // Make another variable that references the first Point object.
+        var p2 = p1;
+	 Console.WriteLine(Object.Equals(p1, p2));
+        // The line below displays: p1's value is: (1, 2)
+        Console.WriteLine($"p1's value is: {p1.ToString()}");
+    }
+}
