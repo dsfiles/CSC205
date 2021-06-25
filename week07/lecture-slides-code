@@ -287,3 +287,42 @@ namespace CSC205Week07
         }
     }
 }
+
+
+
+/*
+ * CSC205 Week07 - code from lecture slides
+ * A simple try-catch example
+ * https://docs.microsoft.com/en-us/dotnet/api/system.exception?view=net-5.0#Errors
+ */
+
+using System;
+
+class ExceptionTestClass
+{
+    public static void Main()
+    {
+        int x = 0;
+        try
+        {
+            int y = 100 / x;
+            Console.WriteLine(y);
+        }
+        catch (ArithmeticException e)
+        {
+            Console.WriteLine($"ArithmeticException Handler: {e}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Generic Exception Handler: {e}");
+        }
+    }
+}
+/*
+This code example produces the following results:
+ArithmeticException Handler: System.DivideByZeroException: Attempted to divide by zero.
+   at ExceptionTestClass.Main()
+More information:
+https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling
+https://docs.microsoft.com/en-us/dotnet/api/system.arithmeticexception?view=net-5.0
+ */
