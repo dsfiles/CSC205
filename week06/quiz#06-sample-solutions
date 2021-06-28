@@ -27,7 +27,7 @@ public static int Apple(int[] a, int p)
     return pear;
 }
 
-// Answer: return the index of p in array a, or -1 if not found
+// Answer: return the index of the first appearance of integer p in array a, or -1 if not found
 public static int Grapefruit(int[] a, int p)
 {
     for (int i = 0; i < a.Length; i++)
