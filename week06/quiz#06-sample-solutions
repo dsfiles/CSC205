@@ -1,0 +1,103 @@
+1. For each of the following methods, write one sentence that describes
+abstractly what the method does. For each variable, identify the role it plays.
+
+// Answer: computes the sum of array a's elements and returns it.
+public static int Banana(int[] a)
+{
+    int grape = 0;
+    int i = 0;
+    while (i < a.Length)
+    {
+        grape = grape + a[i];
+        i++;
+    }
+    return grape;
+}
+
+// Answer: counts the number of times that p appears in the array a
+public static int Apple(int[] a, int p)
+{
+    int i = 0;
+    int pear = 0;
+    while (i < a.Length)
+    {
+        if (a[i] == p) pear++;
+        i++;
+    }
+    return pear;
+}
+
+// Answer: return the index of p in array a, or -1 if not found
+public static int Grapefruit(int[] a, int p)
+{
+    for (int i = 0; i < a.Length; i++)
+    {
+        if (a[i] == p) return i;
+    }
+    return -1;
+}
+
+2. Complete the program by filling the four lines of code in the Main method.
+namespace CSC205Quiz06
+{
+    public class Rect
+    {
+        public double Height { get; set; }
+        public double Length { get; set; }
+        public static double ComputeArea1(Rect rec)
+        {
+            return rec.Height * rec.Length;
+        }
+        public double ComputeArea2()
+        {
+            return Height * Length;
+        }
+    }
+    public class Program
+    {
+        public static void Main()
+        {
+            // Create a new Rect object call r using the default constructor
+            // Invoke ComputeArea1 and display the area of r 
+            // set both r's Height and Length to 3;
+            // Invoke ComputeArea2 to display the area of r
+            //Answers:
+            
+        }
+    }
+}
+
+3. Describe the algorithm.
+using System;
+namespace CSC205Quiz06
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] a = { 3, 2, 5, 1, 4 };
+            int tmp;
+            Console.WriteLine("The original array: ");
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.Write(a[i]+ " ");
+            }
+            for (int i = 0; i < a.Length-1; i++)
+            {
+                for (int j = 0; j < a.Length-1-i; j++)
+                {
+                    if (a[j] > a[j + 1])
+                    {
+                        tmp = a[j + 1];
+                        a[j + 1] = a[j];
+                        a[j] = tmp;
+                    }
+                }
+            }
+            Console.WriteLine("\nThe modified array :");
+            foreach (int i in a)
+                Console.Write(i + " ");
+            Console.ReadLine();
+        }
+    }
+}
