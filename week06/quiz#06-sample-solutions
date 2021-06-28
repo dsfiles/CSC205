@@ -37,6 +37,8 @@ public static int Grapefruit(int[] a, int p)
     return -1;
 }
 
+
+
 2. Complete the program by filling the four lines of code in the Main method.
 namespace CSC205Quiz06
 {
@@ -62,12 +64,24 @@ namespace CSC205Quiz06
             // set both r's Height and Length to 3;
             // Invoke ComputeArea2 to display the area of r
             //Answers:
+            var r = new Rect();
+            System.Console.WriteLine(Rect.ComputeArea1(r));
+            r.Height = r.Length = 3.0;
+            System.Console.WriteLine(r.ComputeArea2());
             
         }
     }
 }
 
+
+
 3. Describe the algorithm.
+/* 
+ * This a Bubble Sort algorithm that uses nested for loops to sort an array.
+ * The inner for loop sinks the largest number to one end of array for each
+ * each iteration of outer for loop.
+ */
+ 
 using System;
 namespace CSC205Quiz06
 {
