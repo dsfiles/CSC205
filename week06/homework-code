@@ -4,13 +4,20 @@
  * Write a program that reads a text file (C# source code for example), inserts 
  * line numbers, instead of displaying to the Console window,  writes out to 
  * a text file. Your program runs on the command line like the following:
-      CSC205Week06HW.exe  HelloWorld.cs  HelloWorld-with-line-numbers.cs
+      CSC205Week06.exe  Hello.cs  Hello2.cs
+ * useful resources
+ * StreamReader sample code, ....
+        https://github.com/dsfiles/CSC205/blob/main/week04/lecture-slides-code
+   StreamWriter Class
+        https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0
+   Command-Line Arguments
+        https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
 */
 
 using System;
 using System.IO;
 
-namespace CSC205Week06HW
+namespace CSC205Week06
 {
     class Program
     {
@@ -25,9 +32,7 @@ namespace CSC205Week06HW
             int count = 1;
             StreamReader sr = new StreamReader(args[0]);
             StreamWriter sw = new StreamWriter(args[1]);
-            Console.WriteLine( sr.ReadLine() );
-            
-            while(true)
+            while (true)
             {
                 line = sr.ReadLine(); //read a line
                 if (line == null)
@@ -41,11 +46,12 @@ namespace CSC205Week06HW
                 }
                 count++;
             }
-            sr.Close();
             sw.Close();
+            sr.Close();
         }
     }
 }
+
 
 
 
