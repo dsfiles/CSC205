@@ -55,7 +55,7 @@ namespace CSC205Week06
             Console.WriteLine("\nCreate a new rational whose terms can be reduced:");
             Rational r5 = new Rational(20, 15);
       
-            //exercise 2: invoke Reduce， Reduce2， Reduce3 to r5
+            //exercise 2: invoke Reduce, Reduce2, Reduce3 to r5, respectively.
             
         }
     }
