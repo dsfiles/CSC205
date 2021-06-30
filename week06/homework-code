@@ -124,8 +124,8 @@ namespace CSC205Week06
     public class Rational
     {
         public int numerator, denominator;
-        public Rational() // default constructor
-        {
+        public Rational()
+        {  // default constructor
             numerator = 0;
             denominator = 1;
         }
@@ -170,9 +170,8 @@ namespace CSC205Week06
         {
             return (double)this.numerator / (double)this.denominator;
         }
-        // Exercise 5.9. on page 60
-        // GCD is common and this function can be applied to any two integers
-        // so we define it a static method.
+        // Exercise 5.9. on page 60. GCD is common and this function can be applied to 
+        // any two integers so we define it a static method.
         public static int GCD(int a, int b)
         {
             int r = a % b;
@@ -209,7 +208,6 @@ namespace CSC205Week06
             Rational r_sum = new Rational(n, d);
             return Rational.Reduce(r_sum);
         }
-
         // add a rational to the current ratinal and the current rational holds the sum afterward
         public void Add3(Rational r)
         {
