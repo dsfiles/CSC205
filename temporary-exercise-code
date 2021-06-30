@@ -49,25 +49,14 @@ namespace CSC205Week06
             Rational.WriteRational(r3);
             Rational r4 = new Rational(2, 3);
             r4.WriteRational2();
-
-            Console.WriteLine("\nAdd them up using three different invocation methods:");
-            Rational.WriteRational(Rational.Add(r3, r4)); // static method invocation via Class name
-            Rational.WriteRational(r3.Add2(r4)); // non-static method invocation via r3
-            r3.Add3(r4); // add r4 to r3, the original r3 
-            r3.WriteRational2(); // display r3 that holds the sum of r3 and r4 now
+            
+            //exercise 1: invoke Add, Add2, Add3 to add r3 and r4
 
             Console.WriteLine("\nCreate a new rational whose terms can be reduced:");
             Rational r5 = new Rational(20, 15);
-            Rational.WriteRational(r5);
-            Console.WriteLine("Terms reduced:");
-            Rational.WriteRational(r5.Reduce2());
-
-            Console.WriteLine("\nCreate another new rational whose terms can be reduced:");
-            Rational r6 = new Rational(16, 36);
-            r6.WriteRational2();
-            Console.WriteLine("Terms reduced:");
-            r6.Reduce3();
-            Rational.WriteRational(r6);
+      
+            //exercise 2: invoke Reduce， Reduce2， Reduce3 to r5
+            
         }
     }
 
