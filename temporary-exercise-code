@@ -1,0 +1,177 @@
+/*
+ * CSC205 Week 6 Homework
+ * #2 - Exercise 9.3. textbook pages 111-112
+ * #3 - Exercise 13.4. (page 158) This exercise is a continuation of Exercise 9.3. 
+ *      The purpose is to practice the syntax of instance methods and get familiar 
+ *      with the relevant error messages.
+ * Note that most methods have two versions: static and non-static methods
+*/
+
+using System;
+
+namespace CSC205Week06
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            Rational r1 = new Rational();
+            Console.WriteLine("Rational r1 is created using default constructor:");
+            Rational.WriteRational(r1);
+            r1.WriteRational2();
+
+            Console.WriteLine("\nAnother rational:");
+            Rational r2 = new Rational(5, 13);
+            Rational.WriteRational(r2);
+            r2.WriteRational2();
+
+            Console.WriteLine("\nInvert of the rational:");
+            Rational.Invert(r2);
+            Rational.WriteRational(r2);
+
+            Console.WriteLine("\nInvert of the rational again (back to the original rational):");
+            r2.Invert2();
+            r2.WriteRational2();
+
+            Console.WriteLine("\nNegate of the rational:");
+            Rational.Negate(r2);
+            Rational.WriteRational(r2);
+
+            Console.WriteLine("\nNegate of the rational again:");
+            r2.Negate2();
+            r2.WriteRational2();
+
+            Console.WriteLine("\nConvert to double: " + Rational.ToDouble(r2));
+            Console.WriteLine("Convert to double: " + r2.ToDouble2() + " again");
+
+            Console.WriteLine("\nCreate two more rationals:");
+            Rational r3 = new Rational(1, 2);
+            Rational.WriteRational(r3);
+            Rational r4 = new Rational(2, 3);
+            r4.WriteRational2();
+
+            Console.WriteLine("\nAdd them up using three different invocation methods:");
+            Rational.WriteRational(Rational.Add(r3, r4)); // static method invocation via Class name
+            Rational.WriteRational(r3.Add2(r4)); // non-static method invocation via r3
+            r3.Add3(r4); // add r4 to r3, the original r3 
+            r3.WriteRational2(); // display r3 that holds the sum of r3 and r4 now
+
+            Console.WriteLine("\nCreate a new rational whose terms can be reduced:");
+            Rational r5 = new Rational(20, 15);
+            Rational.WriteRational(r5);
+            Console.WriteLine("Terms reduced:");
+            Rational.WriteRational(r5.Reduce2());
+
+            Console.WriteLine("\nCreate another new rational whose terms can be reduced:");
+            Rational r6 = new Rational(16, 36);
+            r6.WriteRational2();
+            Console.WriteLine("Terms reduced:");
+            r6.Reduce3();
+            Rational.WriteRational(r6);
+        }
+    }
+
+    public class Rational
+    {
+        public int numerator, denominator;
+        public Rational()
+        {  // default constructor
+            numerator = 0;
+            denominator = 1;
+        }
+        public Rational(int numerator, int denominator)
+        {  // parametric constructor
+            this.numerator = numerator;
+            this.denominator = denominator;
+        }
+        public static void WriteRational(Rational r)
+        {
+            Console.WriteLine($"  numerator: {r.numerator}, denominator: {r.denominator}");
+        }
+        public void WriteRational2()
+        {
+            Console.WriteLine($"  numerator: {this.numerator}, denominator: {this.denominator}");
+        }
+        public static void Invert(Rational r)
+        {
+            int tmp = r.numerator;
+            r.numerator = r.denominator;
+            r.denominator = tmp;
+        }
+        public void Invert2()
+        {
+            int tmp = this.numerator;
+            this.numerator = this.denominator;
+            this.denominator = tmp;
+        }
+        public static void Negate(Rational r)
+        {
+            r.numerator *= -1;
+        }
+        public void Negate2()
+        {
+            this.numerator *= -1;
+        }
+        public static double ToDouble(Rational r)
+        {
+            return (double)r.numerator / (double)r.denominator;
+        }
+        public double ToDouble2()
+        {
+            return (double)this.numerator / (double)this.denominator;
+        }
+        // Exercise 5.9. on page 60. GCD is common and this function can be applied to 
+        // any two integers so we define it a static method.
+        public static int GCD(int a, int b)
+        {
+            int r = a % b;
+            if (r == 0)
+                return b;
+            else
+                return GCD(b, r);
+        }
+        public static Rational Reduce(Rational r)
+        {
+            int n = r.numerator / GCD(r.numerator, r.denominator);
+            int d = r.denominator / GCD(r.numerator, r.denominator);
+            return (new Rational(n, d));
+        }
+        public Rational Reduce2()
+        {
+            int n = this.numerator / GCD(this.numerator, this.denominator);
+            int d = this.denominator / GCD(this.numerator, this.denominator);
+            return (new Rational(n, d));
+        }
+        public void Reduce3()
+        {
+            int gcd = GCD(this.numerator, this.denominator);
+            this.numerator = this.numerator / gcd;
+            this.denominator = this.denominator / gcd;
+        }
+        // add two rationals and return a new rational
+        public static Rational Add(Rational r1, Rational r2)
+        {
+            int n = r1.numerator * r2.denominator + r2.numerator * r1.denominator;
+            int d = r1.denominator * r2.denominator;
+            Rational r = new Rational(n, d);
+            return r.Reduce2();
+        }
+        // add a rational to the current ratinal and return the sum as a new rational
+        public Rational Add2(Rational r)
+        {
+            int n = this.numerator * r.denominator + r.numerator * this.denominator;
+            int d = this.denominator * r.denominator;
+            Rational r_sum = new Rational(n, d);
+            return Rational.Reduce(r_sum);
+        }
+        // add a rational to the current ratinal and the current rational holds the sum afterward
+        public void Add3(Rational r)
+        {
+            // be careful with the order of the following two lines: swapping of their position
+            // will result in an error in the final result. why?
+            this.numerator = this.numerator * r.denominator + r.numerator * this.denominator;
+            this.denominator = this.denominator * r.denominator;
+            this.Reduce2();
+        }
+    }
+}
