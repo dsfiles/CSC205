@@ -84,7 +84,7 @@ namespace CSC205Week06
             Console.WriteLine("\nInvert of the rational:");
             Rational.Invert(r2);
             Rational.WriteRational(r2);
-            
+
             Console.WriteLine("\nInvert of the rational again (back to the original rational):");
             r2.Invert2();
             r2.WriteRational2();
@@ -115,9 +115,15 @@ namespace CSC205Week06
             Console.WriteLine("\nCreate a new rational whose terms can be reduced:");
             Rational r5 = new Rational(20, 15);
             Rational.WriteRational(r5);
-
             Console.WriteLine("Terms reduced:");
             Rational.WriteRational(r5.Reduce2());
+
+            Console.WriteLine("\nCreate another new rational whose terms can be reduced:");
+            Rational r6 = new Rational(16, 36);
+            r6.WriteRational2();
+            Console.WriteLine("Terms reduced:");
+            r6.Reduce3();
+            Rational.WriteRational(r6);
         }
     }
 
@@ -192,6 +198,12 @@ namespace CSC205Week06
             int d = this.denominator / GCD(this.numerator, this.denominator);
             return (new Rational(n, d));
         }
+        public void Reduce3()
+        {
+            int gcd = GCD(this.numerator, this.denominator);
+            this.numerator = this.numerator / gcd;
+            this.denominator = this.denominator / gcd;
+        }
         // add two rationals and return a new rational
         public static Rational Add(Rational r1, Rational r2)
         {
@@ -211,6 +223,8 @@ namespace CSC205Week06
         // add a rational to the current ratinal and the current rational holds the sum afterward
         public void Add3(Rational r)
         {
+            // be careful with the order of the following two lines: swapping of their position
+            // will result in an error in the final result. why?
             this.numerator = this.numerator * r.denominator + r.numerator * this.denominator;
             this.denominator = this.denominator * r.denominator;
             this.Reduce2();
