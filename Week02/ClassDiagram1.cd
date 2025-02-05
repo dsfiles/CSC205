@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Week02.Periodical" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAIAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Periodical.cs</FileName>
+      <NewMemberFileName>Book.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Week02.ClassExample" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ExampleClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Week02.Publication" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAECABEAEAAEAkCEAAAAAAAAAAAAAAAQAAAAAIBAA=</HashCode>
+      <FileName>Publication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Week02.PublicationType" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAEAAAAAAAAAABAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Publication.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

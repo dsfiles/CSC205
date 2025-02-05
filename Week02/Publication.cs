@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Week02
 {
-    public enum PublicationType { Misc, Book, Magazine, Article };
+    public enum PublicationType { Misc, Book, Periodical, Article, Newspaper, Journal, Magazine};
 
     public abstract class Publication
     {
