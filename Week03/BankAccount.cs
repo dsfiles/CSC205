@@ -1,5 +1,4 @@
 ﻿namespace Week03;
-
 public class BankAccount
 {
     private static int s_accountNumberSeed = 1234567890;
