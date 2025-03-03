@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week06", "Week06\Week06.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyArrayList", "Lists\MyArrayList\MyArrayList.csproj", "{49266CA9-F87A-4556-997E-0991AA86FCB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoublyLinkedList", "Lists\DoublyLinkedList\DoublyLinkedList.csproj", "{0A462DD3-1303-4ADC-AB09-9A28C2DA3477}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{49266CA9-F87A-4556-997E-0991AA86FCB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49266CA9-F87A-4556-997E-0991AA86FCB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49266CA9-F87A-4556-997E-0991AA86FCB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A462DD3-1303-4ADC-AB09-9A28C2DA3477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A462DD3-1303-4ADC-AB09-9A28C2DA3477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A462DD3-1303-4ADC-AB09-9A28C2DA3477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A462DD3-1303-4ADC-AB09-9A28C2DA3477}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
