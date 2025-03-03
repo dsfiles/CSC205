@@ -3,7 +3,7 @@
  * 1) For simplicity, ArrayList stores integers only
  * 2) Not all the methods are implemented
  * 3) Generic programming feature is not available
- * Last update: 11/26/2024
+ * Last update: 3/2/2025
  */
 
 namespace MyArrayList
@@ -15,7 +15,7 @@ namespace MyArrayList
             // create an instance
             MyArrayList list = new MyArrayList();
             // check count and capacity
-            Console.WriteLine("An empty list is crated, list count: " + list.Count);
+            Console.WriteLine($"An empty list is crated, list count: {list.Count}, Capacity: {list.Capacity}");
             //add to these numbers to the  list
             list.Add(3);
             Console.WriteLine($"After appending 3, Count: {list.Count}, Capacity: {list.Capacity}");
@@ -28,11 +28,11 @@ namespace MyArrayList
             list.Add(0);
             Console.WriteLine($"After appending 0, Count: {list.Count}, Capacity: {list.Capacity}");
             Console.WriteLine("Now the list is: ");
-            list.DisplayList();
+            Console.WriteLine(list);
+            Console.WriteLine("Element at index 3: " + list[3]);
             list.Sort(); // sort the list using built-in QuickSort algorithm
             Console.WriteLine("After sorting:");
-            list.DisplayList();
-            Console.WriteLine("Element at index 2: " + list[2]);
+            Console.WriteLine(list);
             list.Clear();
             Console.WriteLine($"After invoking Clear(), Count: {list.Count}, Capacity: {list.Capacity}");
         }
@@ -47,10 +47,17 @@ namespace MyArrayList
             get { return values.Length; }
         }
 
-        public MyArrayList(int Capacity = 4) // constructor with default capacity of 4
+        // constructor 1: initializes a new instance of the ArrayList class that is empty and has default capacity of 4
+        public MyArrayList(int Capacity = 4)
         {
             values = new int[Capacity]; // allocate the array
             Count = 0; // initially, count is set to 0;
+        }
+
+        // constructor 2: initializes a new instance of the ArrayList class that contains elements copied from an existing array
+        public MyArrayList(int[] a)
+        {
+            throw new NotImplementedException();
         }
 
         // append a new element to the end of list
@@ -61,7 +68,7 @@ namespace MyArrayList
             {
                 Resize();
             }
-            // put newValue into the array at position count
+            // put newValue into the array at index count
             values[Count] = newValue;
             Count++;
         }
@@ -75,7 +82,7 @@ namespace MyArrayList
             {
                 tmp[pos] = values[pos];
             }
-            // reference values array to the new tmp array
+            // Reference values array to the new tmp array
             values = tmp;
         }
 
@@ -110,8 +117,8 @@ namespace MyArrayList
 
         public void DeleteLast()
         {
-            if (Count == 0) //you CAN't delete last from an empty list
-                throw new IndexOutOfRangeException("You CAN't delete last from an empty list");
+            if (Count == 0) //you CAN'T delete last from an empty list
+                throw new IndexOutOfRangeException("You CAN'T delete last from an empty list");
             Count--; // just decrement the Count without removing it
         }
 
@@ -142,21 +149,26 @@ namespace MyArrayList
             return Count == 0;
         }
 
-        public void DisplayList()
+        // reverse the elements of list
+        public void Reverse()
         {
-            if (IsEmpty())
-                Console.WriteLine("Empty list!");
-            else
-            {
-                for (int i = 0; i < Count; i++)
-                {
-                    Console.Write((values[i]) + " ");
-                }
-                Console.WriteLine();
-            }
+            throw new NotImplementedException();
         }
 
-        public void Reverse()
+        // return the index of the first occurrence of a given value in this list.
+        public int IndexOf(int value)
+        {
+            throw new NotImplementedException();
+        }
+
+        // return the index of the first occurrence of a given value in this list.
+        // the list is searched forwards, starting at index startIndex
+        public int IndexOf(int value, int startIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Contains(int value)
         {
             throw new NotImplementedException();
         }
@@ -168,22 +180,36 @@ namespace MyArrayList
             set { values[i] = value; }
         }
 
+        public override string ToString()
+        {
+            string result = "";
+            if (!IsEmpty())
+            {
+                for (int i = 0; i < Count; i++)
+                {
+                    result += values[i] + " ";
+                }
+            }
+            return result;
+        }
+
+        // sort the list using a built-in quick sort algorithm
         public void Sort()
         {
             QuickSortHelper(values, 0, Count - 1);
         }
 
-        public static void QuickSortHelper(int[] arr, int startIdx, int endIdx)
+        private static void QuickSortHelper(int[] arr, int startIdx, int endIdx)
         {
             if (startIdx < endIdx) //if we have at least 2 elements in the "slice"
             {
                 int q = Partition(arr, startIdx, endIdx); //partition the array
-                QuickSortHelper(arr, startIdx, q - 1); //sort the first "half"
-                QuickSortHelper(arr, q + 1, endIdx); //sort the first "half"
+                QuickSortHelper(arr, startIdx, q - 1); //sort the first "half" before the pivot
+                QuickSortHelper(arr, q + 1, endIdx); //sort the second "half" after the pivot
             }
         }
 
-        public static int Partition(int[] arr, int startIdx, int endIdx)
+        private static int Partition(int[] arr, int startIdx, int endIdx)
         {
             int pivot = arr[endIdx];//last element = the pivot
 
