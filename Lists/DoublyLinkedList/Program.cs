@@ -135,36 +135,34 @@ namespace LinkedList
             }
         }
 
-        public void PrintList()
+        public override string ToString()
         {
-            if (IsEmpty())
+            string result = "--- Head ";
+            if (!IsEmpty())
             {
-                Console.WriteLine("Empty list!");
-            }
-            else
-            {
-                Console.Write("--- Head");
                 Node curr = head;
                 while (curr != null) // Advance the pointer
                 {
                     if (curr == current)
                     { // Mark the 'current' node with <= =>
-                        Console.Write(" <=");
-                        Console.Write(curr.Value);
-                        Console.Write("=> ");
+                        result += " <=";
+                        result += curr.Value;
+                        result += "=> ";
                         curr = curr.Next;
                     }
                     else
                     {
-                        Console.Write(" <-");
-                        Console.Write(curr.Value);
-                        Console.Write("-> ");
+                        result += " <-";
+                        result += curr.Value;
+                        result += "-> ";
                         curr = curr.Next;
                     }
                 }
-                Console.WriteLine("Tail ---");
             }
+            result += " Tail ---";
+            return result;
         }
+
     } // END of class DoublyLinkedList
 
     public class DoublyLinkedListTest
@@ -173,7 +171,7 @@ namespace LinkedList
         {
             DoublyLinkedList testList = new DoublyLinkedList();
             Console.WriteLine("Display the contents of a newly created list: ");
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine($"Append {789} to the list");
             testList.AddLast(789);
@@ -184,29 +182,29 @@ namespace LinkedList
             Console.WriteLine($"Append 'John' to the list");
             testList.AddLast("John");
             Console.WriteLine("Display the whole list:");
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine($"Remove the last node: {testList.tail.Value}");
             testList.RemoveLast();
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine($"Remove the first node: {testList.head.Value}");
             testList.RemoveStart();
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             testList.AddStart("Abby");
             Console.WriteLine($"Add {testList.current.Value} to the front of list");
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine($"Remove the last node: {testList.tail.Value}");
             testList.RemoveLast();
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine("Insert 5, 6, 7 to the list:");
             testList.InsertNode(5);
             testList.InsertNode(6);
             testList.InsertNode(7);
-            testList.PrintList();
+            Console.WriteLine(testList);
             Console.WriteLine("head node is " + testList.head.Value);
             Console.WriteLine("tail node is " + testList.tail.Value);
             Console.WriteLine("curr node is " + testList.current.Value);
