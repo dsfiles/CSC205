@@ -1,5 +1,5 @@
 ﻿/*
- * A simple implementation of ArrayList ADT - Verson 1.0
+ * A simple implementation of ArrayList ADT - Verson 2.0
  * 1) For simplicity, ArrayList stores integers only
  * 2) Not all the methods are implemented
  * 3) Generic programming feature is not available
@@ -12,45 +12,47 @@ namespace MyArrayList
     {
         static void Main(string[] args)
         {
-            // create an instance
+            // create an instance of MyArrayList
             MyArrayList list = new MyArrayList();
+            
             // check count and capacity
-            Console.WriteLine($"An empty list is crated, list count: {list.Count}, Capacity: {list.Capacity}");
-            //add to these numbers to the  list
+            Console.WriteLine($"An empty list is created, count={list.Count}, capacity={list.Capacity}");
+            
+            //add to these numbers to the list
             list.Add(3);
-            Console.WriteLine($"After appending 3, Count: {list.Count}, Capacity: {list.Capacity}");
+            Console.WriteLine($"After appending 3: Count={list.Count}, capacity={list.Capacity}");
             list.Add(1);
-            Console.WriteLine($"After appending 1, Count: {list.Count}, Capacity: {list.Capacity}");
+            Console.WriteLine($"After appending 1: Count={list.Count}, capacity={list.Capacity}");
             list.Add(2);
-            Console.WriteLine($"After appending 2, Count: {list.Count}, Capacity: {list.Capacity}");
+            Console.WriteLine($"After appending 2: Count={list.Count}, capacity={list.Capacity}");
             list.Add(5);
-            Console.WriteLine($"After appending 5, Count: {list.Count}, Capacity: {list.Capacity}");
+            Console.WriteLine($"After appending 5: Count={list.Count}, capacity={list.Capacity}");
             list.Add(0);
-            Console.WriteLine($"After appending 0, Count: {list.Count}, Capacity: {list.Capacity}");
-            Console.WriteLine("Now the list is: ");
+            Console.WriteLine($"After appending 0: Count={list.Count}, capacity={list.Capacity}");
+            Console.Write("Now the list is: ");
             Console.WriteLine(list);
             Console.WriteLine("Element at index 3: " + list[3]);
             list.Sort(); // sort the list using built-in QuickSort algorithm
-            Console.WriteLine("After sorting:");
+            Console.Write("After sorting: ");
             Console.WriteLine(list);
             list.Clear();
-            Console.WriteLine($"After invoking Clear(), Count: {list.Count}, Capacity: {list.Capacity}");
+            Console.WriteLine($"After invoking Clear(), Count={list.Count}, capacity={list.Capacity}");
         }
     }
 
     internal class MyArrayList
     {
-        int[] values; // ArrayList data are stored in an array called values
+        private int[] _values; // ArrayList data are stored in an array called _values
         public int Count { get; private set; }
         public int Capacity
         {
-            get { return values.Length; }
+            get { return _values.Length; }
         }
 
         // constructor 1: initializes a new instance of the ArrayList class that is empty and has default capacity of 4
         public MyArrayList(int Capacity = 4)
         {
-            values = new int[Capacity]; // allocate the array
+            _values = new int[Capacity]; // allocate the array
             Count = 0; // initially, count is set to 0;
         }
 
@@ -69,7 +71,7 @@ namespace MyArrayList
                 Resize();
             }
             // put newValue into the array at index count
-            values[Count] = newValue;
+            _values[Count] = newValue;
             Count++;
         }
 
@@ -77,13 +79,13 @@ namespace MyArrayList
         {
             // create a new array of double capacity
             int[] tmp = new int[2 * Capacity];
-            // copy over the old values
+            // copy over the old _values
             for (int pos = 0; pos < Capacity; pos++)
             {
-                tmp[pos] = values[pos];
+                tmp[pos] = _values[pos];
             }
-            // Reference values array to the new tmp array
-            values = tmp;
+            // Reference _values array to the new tmp array
+            _values = tmp;
         }
 
         public void AddLast(int newValue)
@@ -108,16 +110,16 @@ namespace MyArrayList
             // shift everything from position i to Count-1, to the right by one position
             for (int i = Count; i > index; i--)
             {
-                values[i] = values[i - 1];
+                _values[i] = _values[i - 1];
             }
             // insert the new value
-            values[index] = newValue;
+            _values[index] = newValue;
             Count++;
         }
 
         public void DeleteLast()
         {
-            if (Count == 0) //you CAN'T delete last from an empty list
+            if (Count == 0) //you CAN'T delete anything from an empty list
                 throw new IndexOutOfRangeException("You CAN'T delete last from an empty list");
             Count--; // just decrement the Count without removing it
         }
@@ -135,7 +137,7 @@ namespace MyArrayList
                 throw new ArgumentOutOfRangeException($"index should be between {0} and {Count - 1}");
             // shift everything (that is past index i) to the left one position
             for (int i = index; i < Count - 1; i++)
-                values[i] = values[i + 1];
+                _values[i] = _values[i + 1];
             Count--;
 
         }
@@ -176,8 +178,8 @@ namespace MyArrayList
         // indexer allows indexing like t[2] to work if t is an instance of ArrayList
         public int this[int i]
         {
-            get { return values[i]; }
-            set { values[i] = value; }
+            get { return _values[i]; }
+            set { _values[i] = value; }
         }
 
         public override string ToString()
@@ -187,7 +189,7 @@ namespace MyArrayList
             {
                 for (int i = 0; i < Count; i++)
                 {
-                    result += values[i] + " ";
+                    result += _values[i] + " ";
                 }
             }
             return result;
@@ -196,7 +198,7 @@ namespace MyArrayList
         // sort the list using a built-in quick sort algorithm
         public void Sort()
         {
-            QuickSortHelper(values, 0, Count - 1);
+            QuickSortHelper(_values, 0, Count - 1);
         }
 
         private static void QuickSortHelper(int[] arr, int startIdx, int endIdx)
