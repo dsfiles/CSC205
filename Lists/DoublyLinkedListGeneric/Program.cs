@@ -168,7 +168,7 @@ namespace DoublyLinkedListGeneric
         static void Main(string[] args)
         {
             var testList = new DoublyLinkedList<object>(); // testList can only store integers
-            Console.WriteLine("Display the contents of a newly created list: ");
+            Console.WriteLine("3/22/25 Display the contents of a newly created list: ");
             testList.PrintList();
 
             Console.WriteLine($"Append 7 to the list");
