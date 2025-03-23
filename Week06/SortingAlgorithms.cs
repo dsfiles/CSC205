@@ -45,7 +45,7 @@ class SortingAlgorithms
         stopwatch.Stop();
         Console.WriteLine($"Optimized bubble sort: {stopwatch.Elapsed.TotalMilliseconds:0.0} ms");
 
-        /* uncomment each one after you add a sorting algorithm
+        // uncomment each one after you add a sorting algorithm
         stopwatch.Restart();
         SelectionSort(arr3);
         stopwatch.Stop();
@@ -65,7 +65,6 @@ class SortingAlgorithms
         QuickSort(arr6);
         stopwatch.Stop();
         Console.WriteLine($"Quick sort: {stopwatch.Elapsed.TotalMilliseconds:0.0} ms");
-        */
     }
 
     static void BubbleSort(int[] arr)
@@ -107,7 +106,7 @@ class SortingAlgorithms
             }
         }
     }
-    
+
     /* fill out the missing code below:
     static void SelectionSort(int[] arr)
     {
@@ -156,4 +155,127 @@ class SortingAlgorithms
         // your code here
     }
     */
+
+    // Example Insertion, Selection, Merge, and Quick sorting algorithms below:
+
+    static void SelectionSort(int[] arr)
+    {
+        int minIndex, tmp;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            minIndex = i;
+            for (int j = i + 1; j < arr.Length; j++)
+            {
+                if (arr[j] < arr[minIndex])
+                {
+                    minIndex = j;
+                }
+            }
+            tmp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = tmp;
+        }
+    } //end of SelectionSort
+
+    static void InsertionSort(int[] arr)
+    {
+        int curr, i, j;
+        for (i = 1; i < arr.Length; i++)
+        {
+            curr = arr[i];
+            for (j = i - 1; j >= 0 && arr[j] > curr; j--)
+            {
+                arr[j + 1] = arr[j];
+            }
+            arr[j + 1] = curr;
+        }
+    } //end of InsertionSort
+
+    static void MergeSort(int[] arr)
+    {
+        MergeSort(arr, 0, arr.Length - 1);
+    }
+    // Recursively sort the two halves and merge them into one sorted list
+    static void MergeSort(int[] arr, int left, int right)
+    {
+        if (left < right)
+        {
+            int mid = (left + right) / 2;
+            MergeSort(arr, left, mid);
+            MergeSort(arr, mid + 1, right);
+            Merge(arr, left, mid, right);
+        }
+    }
+    // The following method merges two sorted portions of array into one sorted portion.
+    // The start index and end index are left & mid for the left portion, and mid+1 & right
+    // for the right portion of the original array.
+    static void Merge(int[] arr, int left, int mid, int right)
+    {
+        // Create a temporary array to store the sorted elements
+        int[] m = new int[right - left + 1];
+        int i = left, j = mid + 1, k = 0;
+        // If both portions of array has elements, pick the smaller one
+        while (i <= mid && j <= right)
+        {
+            if (arr[i] < arr[j])
+                m[k++] = arr[i++];
+            else
+                m[k++] = arr[j++];
+        }
+        // Copy the remainder of the list
+        while (i <= mid)
+            m[k++] = arr[i++];
+        // Copy the remainder of the list
+        while (j <= right)
+            m[k++] = arr[j++];
+        // Copy sorted data from the temporary array back to the original array
+        for (int index = 0; index < m.Length; index++)
+        {
+            arr[left + index] = m[index];
+        }
+    }
+
+    static void QuickSort(int[] arr)
+    {
+        QuickSort(arr, 0, arr.Length - 1);
+    }
+    static void QuickSort(int[] arr, int left, int right)
+    {
+        // return right way if there is only one element, i.e., left == right,
+        // or there is none, i.e., left > right, 
+        if (left < right)
+        {
+            int p = Partition(arr, left, right); // p is the index of pivot
+            QuickSort(arr, left, p - 1);
+            QuickSort(arr, p + 1, right);
+        }
+    }
+    static int Partition(int[] arr, int left, int right)
+    {
+        int pivot = arr[right], tmp;
+        int l = left;
+        int r = right - 1;
+        while (l < r)
+        {
+            while (arr[l] <= pivot && l < r) // also shift the l pointer when arr[l]==pivot
+            {
+                l++;
+            }
+            while (arr[r] > pivot && l < r)
+            {
+                r--;
+            }
+            if (l < r)
+            {
+                tmp = arr[l]; arr[l] = arr[r]; arr[r] = tmp;
+            }
+        }
+        // original bug in the line below is removed! 
+        // tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
+        if (arr[l] > arr[right])
+        {
+            tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
+        }
+        return l;
+    }
 }
