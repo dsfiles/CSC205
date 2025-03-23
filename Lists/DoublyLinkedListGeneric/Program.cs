@@ -3,6 +3,8 @@
  * March 2025
  *************************************************************/
 
+using System.Text;
+
 namespace DoublyLinkedListGeneric
 {
     public class Node<T>
@@ -131,35 +133,37 @@ namespace DoublyLinkedListGeneric
             }
         }
 
-        public void PrintList()
+        public override string ToString()
         {
+            StringBuilder sb = new StringBuilder();
             if (IsEmpty())
             {
-                Console.WriteLine("Empty list!");
+                sb.Append("Empty list!");
             }
             else
             {
-                Console.Write("--- Head");
+                sb.Append("--- Head");
                 Node<T> curr = head;
                 while (curr != null) // Advance the pointer
                 {
                     if (curr == current)
                     { // Mark the 'current' node with <= =>
-                        Console.Write(" <=");
-                        Console.Write(curr.Value);
-                        Console.Write("=> ");
+                        sb.Append(" <=");
+                        sb.Append(curr.Value);
+                        sb.Append("=> ");
                         curr = curr.Next;
                     }
                     else
                     {
-                        Console.Write(" <-");
-                        Console.Write(curr.Value);
-                        Console.Write("-> ");
+                        sb.Append(" <-");
+                        sb.Append(curr.Value);
+                        sb.Append("-> ");
                         curr = curr.Next;
                     }
                 }
-                Console.WriteLine("Tail ---");
+                sb.Append("Tail ---");
             }
+            return sb.ToString();
         }
     }  // END of class DoublyLinkedList<T>
 
@@ -169,41 +173,40 @@ namespace DoublyLinkedListGeneric
         {
             var testList = new DoublyLinkedList<int>(); // testList can only store integers
             Console.WriteLine("Display the contents of a newly created list: ");
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine($"Append 7 to the list");
             testList.AddLast(7);
 
-            // Just want to show that a node can store any object (integers, strings, etc.)
             Console.WriteLine($"Append 8 to the list");
             testList.AddLast(8);
 
             Console.WriteLine($"Append 9 to the list");
             testList.AddLast(9);
             Console.WriteLine("Display the whole list:");
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine($"Remove the last node: {testList.tail.Value}");
             testList.RemoveLast();
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine($"Remove the first node: {testList.head.Value}");
             testList.RemoveStart();
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             testList.AddStart(2);
             Console.WriteLine($"Add {testList.current.Value} to the front of list");
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine($"Remove the last node: {testList.tail.Value}");
             testList.RemoveLast();
-            testList.PrintList();
+            Console.WriteLine(testList);
 
             Console.WriteLine("Insert 5, 6, 7 to the list:");
             testList.InsertNode(5);
             testList.InsertNode(6);
             testList.InsertNode(7);
-            testList.PrintList();
+            Console.WriteLine(testList);
             Console.WriteLine("head node is " + testList.head.Value);
             Console.WriteLine("tail node is " + testList.tail.Value);
             Console.WriteLine("curr node is " + testList.current.Value);
