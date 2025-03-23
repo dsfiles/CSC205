@@ -167,16 +167,16 @@ namespace DoublyLinkedListGeneric
     {
         static void Main(string[] args)
         {
-            var testList = new DoublyLinkedList<object>(); // testList can only store integers
-            Console.WriteLine("3/22/25 Display the contents of a newly created list: ");
+            var testList = new DoublyLinkedList<int>(); // testList can only store integers
+            Console.WriteLine("Display the contents of a newly created list: ");
             testList.PrintList();
 
             Console.WriteLine($"Append 7 to the list");
             testList.AddLast(7);
 
             // Just want to show that a node can store any object (integers, strings, etc.)
-            Console.WriteLine($"Append \"eight\" to the list");
-            testList.AddLast("eight");
+            Console.WriteLine($"Append 8 to the list");
+            testList.AddLast(8);
 
             Console.WriteLine($"Append 9 to the list");
             testList.AddLast(9);
