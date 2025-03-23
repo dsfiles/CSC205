@@ -133,8 +133,8 @@ namespace DoublyLinkedListGeneric
             }
         }
 
-        public override string ToString()
-        {
+        public override string ToString() 
+        { // new
             StringBuilder sb = new StringBuilder();
             if (IsEmpty())
             {
