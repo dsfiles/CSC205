@@ -14,7 +14,7 @@ class SortingAlgorithms
     {
         Random rand = new Random();
         Stopwatch stopwatch = new Stopwatch(); // Create a stopwatch object to track time elapse
-        int size = 10000; // Try array sizes of 10, 100, 1k, 10k, 100k, or even higher
+        int size = 50_000; // Try array sizes of 10, 100, 1k, 10k, 100k, or even higher
         int[] arr1 = new int[size];
         int[] arr2 = new int[size];
         int[] arr3 = new int[size];
@@ -23,17 +23,17 @@ class SortingAlgorithms
         int[] arr6 = new int[size];
 
         // Create arrays of random numbers
-        for (int i = 0; i < size; i++)
-            arr1[i] = arr2[i] = arr3[i] = arr4[i] = arr5[i] = arr6[i] = rand.Next();
+        //for (int i = 0; i < size; i++)
+        //    arr1[i] = arr2[i] = arr3[i] = arr4[i] = arr5[i] = arr6[i] = rand.Next();
 
         // Create sorted arrays in ascending order
-        //for (int i = 0; i < size; i++)
-        //    arr1[i] = arr2[i] = arr3[i] = arr4[i] = arr5[i] = arr6[i] = i;
+        for (int i = 0; i < size; i++)
+            arr1[i] = arr2[i] = arr3[i] = arr4[i] = arr5[i] = arr6[i] = i;
 
         // Create sorted arrays in descending order
         //for (int i = 0; i < size; i++)
         //    arr1[i] = arr2[i] = arr3[i] = arr4[i] = arr5[i] = arr6[i] = size-1-i;
-
+        
         Console.WriteLine($"Time (in milliseconds) to sort {size} numbers ...");
         stopwatch.Start();
         BubbleSort(arr1);
@@ -44,7 +44,7 @@ class SortingAlgorithms
         BubbleSortOptimized(arr2);
         stopwatch.Stop();
         Console.WriteLine($"Optimized bubble sort: {stopwatch.Elapsed.TotalMilliseconds:0.0} ms");
-
+        
         // uncomment each one after you add a sorting algorithm
         stopwatch.Restart();
         SelectionSort(arr3);
@@ -55,7 +55,7 @@ class SortingAlgorithms
         InsertionSort(arr4);
         stopwatch.Stop();
         Console.WriteLine($"Insertion sort: {stopwatch.Elapsed.TotalMilliseconds:0.0} ms");
-
+        
         stopwatch.Restart();
         MergeSort(arr5);
         stopwatch.Stop();
@@ -106,55 +106,6 @@ class SortingAlgorithms
             }
         }
     }
-
-    /* fill out the missing code below:
-    static void SelectionSort(int[] arr)
-    {
-        // your code here
-    } //end of SelectionSort
-    
-    static void InsertionSort(int[] arr)
-    {
-        // your code here
-    } //end of InsertionSort
-
-    static void MergeSort(int[] arr)
-    {
-        MergeSort(arr, 0, arr.Length - 1);
-    }
-    // Recursively sort the two halves and merge them into one sorted list
-    static void MergeSort(int[] arr, int left, int right)
-    {
-        // your code here
-    }
-    // The following method merges two sorted portions of array into one sorted portion.
-    // The start index and end index are left & mid for the left portion, and mid+1 & right
-    // for the right portion of the original array.
-    static void Merge(int[] arr, int left, int mid, int right)
-    {
-        // your code here
-    }
-
-    static void QuickSort(int[] arr)
-    {
-        QuickSort(arr, 0, arr.Length - 1);
-    }
-    static void QuickSort(int[] arr, int left, int right)
-    {
-        // return right way if there is only one element, i.e., left == right,
-        // or there is none, i.e., left > right, 
-        if (left < right)
-        {
-            int p = Partition(arr, left, right); // p is the index of pivot
-            QuickSort(arr, left, p - 1);
-            QuickSort(arr, p + 1, right);
-        }
-    }
-    static int Partition(int[] arr, int left, int right)
-    {
-        // your code here
-    }
-    */
 
     // Example Insertion, Selection, Merge, and Quick sorting algorithms below:
 
@@ -270,12 +221,14 @@ class SortingAlgorithms
                 tmp = arr[l]; arr[l] = arr[r]; arr[r] = tmp;
             }
         }
-        // original bug in the line below is removed! 
-        // tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
+        // With l and r overlapping, swap the current element with the pivot only if it is greater than the pivot
         if (arr[l] > arr[right])
         {
             tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
+            return l;
+        } else
+        {
+            return right; // pivot stays where it is
         }
-        return l;
     }
 }
