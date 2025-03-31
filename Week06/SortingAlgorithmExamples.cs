@@ -4,14 +4,13 @@
 * Do you get the same relative timings as shown in the table? Figure 7.20 (Page 260)? 
 * If not, why do you think this happened? How do your results compare with those of 
 * your classmates? What does this say about the difficulty of doing empirical timing studies?
-
+*/
 
 using System;
 using System.Diagnostics;
 
-class SortingAlgorithms
+public class SortingAlgorithmExamples
 {
-    
     static void Main(string[] args)
     {
         Random rand = new Random();
@@ -47,7 +46,6 @@ class SortingAlgorithms
         stopwatch.Stop();
         Console.WriteLine($"Optimized bubble sort: {stopwatch.Elapsed.TotalMilliseconds:0.0} ms");
 
-        // uncomment each one after you add a sorting algorithm
         stopwatch.Restart();
         SelectionSort(arr3);
         stopwatch.Stop();
@@ -67,9 +65,8 @@ class SortingAlgorithms
         QuickSort(arr6);
         stopwatch.Stop();
         Console.WriteLine($"Quick sort: {stopwatch.Elapsed.TotalMilliseconds:0.0} ms");
-        
     }
-/*
+
     static void BubbleSort(int[] arr)
     {
         int tmp;
@@ -86,7 +83,7 @@ class SortingAlgorithms
             }
         }
     }
-    
+
     static void BubbleSortOptimized(int[] arr)
     {
         int tmp;
@@ -109,16 +106,37 @@ class SortingAlgorithms
             }
         }
     }
-    
-    /* fill out the missing code below:
     static void SelectionSort(int[] arr)
     {
-        // your code here
+        int minIndex, tmp;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            minIndex = i;
+            for (int j = i + 1; j < arr.Length; j++)
+            {
+                if (arr[j] < arr[minIndex])
+                {
+                    minIndex = j;
+                }
+            }
+            tmp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = tmp;
+        }
     } //end of SelectionSort
-    
+
     static void InsertionSort(int[] arr)
     {
-        // your code here
+        int curr, i, j;
+        for (i = 1; i < arr.Length; i++)
+        {
+            curr = arr[i];
+            for (j = i - 1; j >= 0 && arr[j] > curr; j--)
+            {
+                arr[j + 1] = arr[j];
+            }
+            arr[j + 1] = curr;
+        }
     } //end of InsertionSort
 
     static void MergeSort(int[] arr)
@@ -128,14 +146,41 @@ class SortingAlgorithms
     // Recursively sort the two halves and merge them into one sorted list
     static void MergeSort(int[] arr, int left, int right)
     {
-        // your code here
+        if (left < right)
+        {
+            int mid = (left + right) / 2;
+            MergeSort(arr, left, mid);
+            MergeSort(arr, mid + 1, right);
+            Merge(arr, left, mid, right);
+        }
     }
     // The following method merges two sorted portions of array into one sorted portion.
     // The start index and end index are left & mid for the left portion, and mid+1 & right
     // for the right portion of the original array.
     static void Merge(int[] arr, int left, int mid, int right)
     {
-        // your code here
+        // Create a temporary array to store the sorted elements
+        int[] m = new int[right - left + 1];
+        int i = left, j = mid + 1, k = 0;
+        // If both portions of array has elements, pick the smaller one
+        while (i <= mid && j <= right)
+        {
+            if (arr[i] < arr[j])
+                m[k++] = arr[i++];
+            else
+                m[k++] = arr[j++];
+        }
+        // Copy the remainder of the list
+        while (i <= mid)
+            m[k++] = arr[i++];
+        // Copy the remainder of the list
+        while (j <= right)
+            m[k++] = arr[j++];
+        // Copy sorted data from the temporary array back to the original array
+        for (int index = 0; index < m.Length; index++)
+        {
+            arr[left + index] = m[index];
+        }
     }
 
     static void QuickSort(int[] arr)
@@ -155,7 +200,30 @@ class SortingAlgorithms
     }
     static int Partition(int[] arr, int left, int right)
     {
-        // your code here
+        int pivot = arr[right], tmp;
+        int l = left;
+        int r = right - 1;
+        while (l < r)
+        {
+            while (arr[l] <= pivot && l < r) // also shift the l pointer when arr[l]==pivot
+            {
+                l++;
+            }
+            while (arr[r] > pivot && l < r)
+            {
+                r--;
+            }
+            if (l < r)
+            {
+                tmp = arr[l]; arr[l] = arr[r]; arr[r] = tmp;
+            }
+        }
+        // original bug in the line below is removed! 
+        // tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
+        if (arr[l] > arr[right])
+        {
+            tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
+        }
+        return l;
     }
-    
-} */
+}
