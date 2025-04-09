@@ -9,6 +9,7 @@ public class Program
 {
     static void Main(string[] args)
     {
+        // Testing the circular linked list
         var playList = new CircularLinkedList();
         Console.WriteLine("Display the contents of a newly created play list: ");
         Console.WriteLine(playList);
@@ -35,23 +36,12 @@ public class Program
         playList.MoveForward();
         Console.WriteLine(playList);
 
+        // Testing the sorted linked list
         Console.WriteLine("\nTesting sorted linked list!");
 
         var sortedList = new SortedLinkedList<int>();
         Console.WriteLine("Display the contents of a newly created list: ");
         Console.WriteLine(sortedList);
-
-        //Console.WriteLine($"Remove the first node: {sortedList.head.Value}");
-        //sortedList.RemoveStart();
-        //Console.WriteLine(sortedList);
-
-        //sortedList.AddStart(2);
-        //Console.WriteLine($"Add {sortedList.current.Value} to the front of list");
-        //Console.WriteLine(sortedList);
-
-        //Console.WriteLine($"Remove the last node: {sortedList.tail.Value}");
-        //sortedList.RemoveLast();
-        //Console.WriteLine(sortedList);
 
         Console.WriteLine("Insert 6, 3, 7, 1 to the list:");
         sortedList.InsertNode(6);
