@@ -19,7 +19,7 @@ public class Node
     public Node(object obj)
     {
         Value = obj;
-        Next = null;
+        Next = null;  
         Prev = null;
     }
 }

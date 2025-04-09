@@ -1,4 +1,10 @@
-﻿namespace Week10;
+﻿/*************************************************************
+ * CSC205 Assignment Week 10 - Implementation of
+ * Testing of Circular Doubly-Linked List and Sorted Doubly-Linked List
+ * April 2025
+ *************************************************************/
+
+namespace Week10;
 public class Program
 {
     static void Main(string[] args)

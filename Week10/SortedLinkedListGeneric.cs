@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿/*************************************************************
+ * CSC205 Assignment Week 10 - Implementation of a Sorted Doubly-Linked List
+ * April 2025
+ *************************************************************/
 namespace Week10;
+
+using System.Text; // for StringBuilder
 
 public class Node<T>
 {
