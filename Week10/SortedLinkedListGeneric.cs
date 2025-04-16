@@ -115,7 +115,7 @@ public class SortedLinkedList<T> where T : IComparable<T>
     }
 
     public override string ToString()
-    { // new
+    { // new 
         StringBuilder sb = new StringBuilder();
         if (IsEmpty())
         {
