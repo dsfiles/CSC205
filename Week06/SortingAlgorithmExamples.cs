@@ -64,6 +64,10 @@ public class SortingAlgorithmExamples
         stopwatch.Restart();
         QuickSort(arr6);
         stopwatch.Stop();
+        for (int i = 0; i < size; i++)
+        {
+            Console.Write(arr6[i]+" ");
+        }
         Console.WriteLine($"Quick sort: {stopwatch.Elapsed.TotalMilliseconds:0.0} ms");
     }
 
@@ -198,6 +202,8 @@ public class SortingAlgorithmExamples
             QuickSort(arr, p + 1, right);
         }
     }
+
+    // A bug in the code to be fixed 5/6/25
     static int Partition(int[] arr, int left, int right)
     {
         int pivot = arr[right], tmp;
@@ -205,7 +211,7 @@ public class SortingAlgorithmExamples
         int r = right - 1;
         while (l < r)
         {
-            while (arr[l] <= pivot && l < r) // also shift the l pointer when arr[l]==pivot
+            while (arr[l] <= pivot && l < r)
             {
                 l++;
             }
@@ -218,8 +224,6 @@ public class SortingAlgorithmExamples
                 tmp = arr[l]; arr[l] = arr[r]; arr[r] = tmp;
             }
         }
-        // original bug in the line below is removed! 
-        // tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
         if (arr[l] > arr[right])
         {
             tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
