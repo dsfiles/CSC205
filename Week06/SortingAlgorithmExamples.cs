@@ -202,8 +202,6 @@ public class SortingAlgorithmExamples
             QuickSort(arr, p + 1, right);
         }
     }
-
-    // A bug in the code to be fixed 5/6/25
     static int Partition(int[] arr, int left, int right)
     {
         int pivot = arr[right], tmp;
@@ -223,11 +221,15 @@ public class SortingAlgorithmExamples
             {
                 tmp = arr[l]; arr[l] = arr[r]; arr[r] = tmp;
             }
-        }
+        } // l and r indexes overlap (l==r) after getting out of this while loop
         if (arr[l] > arr[right])
         {
             tmp = arr[l]; arr[l] = arr[right]; arr[right] = tmp;
+            return r; // r is the position of pivot
         }
-        return l;
+        else
+        {
+            return right; // the pivot is the largest number
+        }
     }
 }
