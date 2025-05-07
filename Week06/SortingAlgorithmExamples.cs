@@ -64,10 +64,6 @@ public class SortingAlgorithmExamples
         stopwatch.Restart();
         QuickSort(arr6);
         stopwatch.Stop();
-        for (int i = 0; i < size; i++)
-        {
-            Console.Write(arr6[i]+" ");
-        }
         Console.WriteLine($"Quick sort: {stopwatch.Elapsed.TotalMilliseconds:0.0} ms");
     }
 
